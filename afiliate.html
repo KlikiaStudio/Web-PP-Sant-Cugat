@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Afíliate — PP Sant Cugat</title>
+<meta name="description" content="Únete al Partido Popular de Sant Cugat del Vallès y participa en el proyecto de ciudad para las elecciones municipales de mayo de 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
+<script>Layout.header('afiliate');</script>
+
+<!-- ============ JOIN / NEWSLETTER ============ -->
+<section class="join">
+  <div class="wrap">
+    <div class="join-box" data-reveal>
+      <div class="join-grid">
+        <div>
+          <span class="eyebrow" data-i18n="join_eyebrow">Súmate al proyecto</span>
+          <h2 data-i18n-html="join_title">Sant Cugat lo cambiamos <span class="accent" style="color:var(--pp-blue);">entre todos</span>.</h2>
+          <p class="lead" data-i18n="join_lead">Recibe nuestras propuestas y participa en el proyecto de ciudad para 2027. Sin spam. Solo lo importante.</p>
+          <div class="social-circles">
+            <a class="scircle" href="#" data-net="facebook">FB</a>
+            <a class="scircle" href="#" data-net="instagram">IG</a>
+            <a class="scircle" href="#" data-net="youtube">YT</a>
+            <a class="scircle" href="#" data-net="x">X</a>
+            <a class="scircle" href="#" data-net="tiktok">TT</a>
+          </div>
+        </div>
+        <form id="joinForm" onsubmit="return handleJoinSubmit(event)">
+          <div class="field">
+            <label data-i18n="form_name">Nombre</label>
+            <input type="text" name="nombre" data-i18n-placeholder="form_name_ph" placeholder="Tu nombre" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label data-i18n="form_email">Email</label>
+              <input type="email" name="email" placeholder="tu@email.com" required>
+            </div>
+            <div class="field">
+              <label data-i18n="form_cp">Código postal</label>
+              <input type="text" name="cp" placeholder="08172" pattern="[0-9]{5}">
+            </div>
+          </div>
+          <label class="checkbox-row">
+            <input type="checkbox" required>
+            <span data-i18n="form_rgpd">Acepto la política de privacidad y el tratamiento de mis datos para recibir comunicaciones del PP Sant Cugat (RGPD).</span>
+          </label>
+          <button type="submit" class="btn btn-primary submit-btn" data-i18n="form_submit">ÚNETE AL PROYECTO</button>
+          <p class="form-note" data-i18n="form_note">[Formulario pendiente de conectar — ver checklist de activación]</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script>Layout.footer();</script>
+
+<!-- ============ DATOS DINÁMICOS ============ -->
+<script src="data/videos.js"></script>
+<script src="data/news.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

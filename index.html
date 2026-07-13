@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PP Sant Cugat — Horizonte 2027</title>
+<meta name="description" content="Partido Popular de Sant Cugat del Vallès. Propuestas, actualidad y agenda de cara a las elecciones municipales de mayo de 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
+<script>Layout.header('inicio');</script>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="badge" data-i18n="hero_badge">Horizonte 2027</span>
+      <h1 data-i18n-html="hero_title">Un nuevo impulso para <span class="accent">Sant Cugat</span>.</h1>
+      <p class="lead" data-i18n="hero_lead">Construimos una alternativa sólida para recuperar la seguridad, fomentar la vivienda joven y dinamizar nuestra economía local. Con propuestas reales y una gestión centrada en las personas.</p>
+      <div class="hero-actions">
+        <a href="#hub" class="btn btn-primary" data-i18n="hero_cta1">Especial Elecciones 2027 →</a>
+        <a href="afiliate.html" class="btn btn-ghost" data-i18n="hero_cta2">Únete</a>
+      </div>
+      <div class="hero-meta">
+        <span data-i18n="hero_meta1">LOCAL · SANT CUGAT</span>
+        <span data-i18n="hero_meta2">BILINGÜE ES · CA</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-photo">
+        <div class="ph-note" data-i18n="hero_photo_note">[Sustituir por fotografía real del candidato/a — assets/candidato.jpg]</div>
+      </div>
+      <div class="hero-quote">
+        <p data-i18n="hero_quote">"Sant Cugat merece una gestión que piense en las familias y en los jóvenes."</p>
+        <div class="who">[Nombre del Candidato/a]</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HUB BANNER ============ -->
+<section id="hub" style="padding:0 0 100px;">
+  <div class="hub" data-reveal>
+    <div class="hub-grid">
+      <div>
+        <span class="badge" data-i18n="hub_badge">Especial Elecciones 2027</span>
+        <h2 data-i18n-html="hub_title">El hub de campaña de <span class="accent">Sant Cugat</span>.</h2>
+        <p class="lead" data-i18n="hub_lead">Toda la actividad del candidato/a, propuestas por ejes, agenda, notas de prensa y contenido para redes en un único espacio, permanentemente actualizado.</p>
+        <div class="hub-actions">
+          <a href="propuestas.html" class="btn btn-primary" data-i18n="hub_cta1">Explorar el hub →</a>
+          <a href="afiliate.html" class="btn btn-ghost-dark" data-i18n="hub_cta2">Suscribirme a novedades</a>
+        </div>
+      </div>
+      <div class="hub-stats">
+        <a href="propuestas.html" class="hub-stat">
+          <div class="hub-stat-left">
+            <div class="hub-stat-icon">✦</div>
+            <div><div class="hub-stat-label" data-i18n="hub_stat1_label">Propuestas</div><div class="hub-stat-value" data-i18n="hub_stat1_value">12 ejes</div></div>
+          </div>
+          <span>↗</span>
+        </a>
+        <a href="contacto.html" class="hub-stat">
+          <div class="hub-stat-left">
+            <div class="hub-stat-icon">📅</div>
+            <div><div class="hub-stat-label" data-i18n="hub_stat2_label">Agenda</div><div class="hub-stat-value" data-i18n="hub_stat2_value">Próximos actos</div></div>
+          </div>
+          <span>↗</span>
+        </a>
+        <a href="index.html#videos" class="hub-stat">
+          <div class="hub-stat-left">
+            <div class="hub-stat-icon">⤴</div>
+            <div><div class="hub-stat-label" data-i18n="hub_stat3_label">Comparte</div><div class="hub-stat-value">IG · TikTok · YT</div></div>
+          </div>
+          <span>↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEOS ============ -->
+<section id="videos" style="background:var(--surface);">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-i18n="vid_eyebrow">Vídeos</span>
+        <h2 data-i18n="vid_title">Actualidad en Reels y Shorts.</h2>
+      </div>
+      <a href="#videos" class="section-link" data-i18n="vid_link">VER TODOS →</a>
+    </div>
+    <div class="video-row" id="videoRow"></div>
+  </div>
+</section>
+
+<!-- ============ ACTUALIDAD (noticias principales) ============ -->
+<section id="actualidad">
+  <div class="wrap">
+    <div class="news-home-list">
+      <div class="news-head">
+        <h3 data-i18n="news_title">Actualidad municipal</h3>
+        <a href="noticias.html" class="section-link" data-i18n="news_link">TODAS</a>
+      </div>
+      <div id="newsList"></div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-card blue" data-reveal>
+        <span class="soon-pill" data-i18n="soon">Próximamente</span>
+        <div class="feature-icon">📷</div>
+        <h3 data-i18n="foto_title">Foto-Denuncia</h3>
+        <p data-i18n="foto_lead">¿Has visto algo que no funciona en tu barrio? Envíanos una foto y lo llevamos al pleno.</p>
+        <span class="btn btn-ghost-dark" style="opacity:.6;cursor:not-allowed;" data-i18n="foto_cta">Enviar foto</span>
+      </div>
+      <div class="feature-card dark" data-reveal>
+        <span class="soon-pill" data-i18n="soon">Próximamente</span>
+        <div class="feature-icon">📍</div>
+        <h3 data-i18n="mapa_title">Mapa de Abandono</h3>
+        <p data-i18n="mapa_lead">Consulta los puntos del municipio que requieren intervención urgente del consistorio.</p>
+        <span class="btn btn-ghost-dark" style="opacity:.6;cursor:not-allowed;" data-i18n="mapa_cta">Ver mapa</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script>Layout.footer();</script>
+
+<!-- ============ DATOS DINÁMICOS ============ -->
+<script src="data/videos.js"></script>
+<script src="data/news.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

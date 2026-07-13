@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conócenos — PP Sant Cugat</title>
+<meta name="description" content="Conoce al Partido Popular de Sant Cugat del Vallès y a las personas que lideran el proyecto de cara a las elecciones municipales de mayo de 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
+<script>Layout.header('conocenos');</script>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="wrap">
+    <span class="badge" data-i18n="about_eyebrow">Conócenos</span>
+    <h1 data-i18n="conocenos_page_title">El Partido Popular en Sant Cugat.</h1>
+    <p class="lead" data-i18n="conocenos_page_lead">Trabajamos cada día desde el Ayuntamiento para defender los intereses de los vecinos y vecinas de Sant Cugat. Conoce a las personas que lideran este proyecto.</p>
+  </div>
+</section>
+
+<!-- ============ SOBRE EL PARTIDO ============ -->
+<section class="about" style="padding-top:0;">
+  <div class="wrap">
+    <div class="about-photo" data-reveal></div>
+    <div data-reveal>
+      <span class="eyebrow" data-i18n="about_eyebrow">Conócenos</span>
+      <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);color:var(--pp-navy);margin-bottom:16px;" data-i18n="about_title">[Nombre del Candidato/a]</h2>
+      <p style="color:var(--muted);max-width:520px;" data-i18n="about_bio">[Biografía real del candidato/a — trayectoria, vinculación con Sant Cugat y motivación para presentarse a las elecciones de mayo de 2027. Sustituir por el texto real.]</p>
+      <div class="stat-row">
+        <div class="stat"><div class="num" data-count="0">0</div><div class="lbl" data-i18n="about_stat1">Años en Sant Cugat</div></div>
+        <div class="stat"><div class="num" data-count="0">0</div><div class="lbl" data-i18n="about_stat2">Vecinos escuchados</div></div>
+        <div class="stat"><div class="num" data-count="0">0</div><div class="lbl" data-i18n="about_stat3">Propuestas presentadas</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUIPO ============ -->
+<section style="background:var(--surface);padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-i18n="about_eyebrow">Conócenos</span>
+        <h2 data-i18n="team_title">Nuestro equipo</h2>
+      </div>
+    </div>
+    <div class="team-grid" id="teamGrid"></div>
+    <p class="team-note" data-i18n="team_note">Muy pronto publicaremos una página individual con la trayectoria completa de cada candidato/a.</p>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script>Layout.footer();</script>
+
+<!-- ============ DATOS DINÁMICOS ============ -->
+<script src="data/videos.js"></script>
+<script src="data/news.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

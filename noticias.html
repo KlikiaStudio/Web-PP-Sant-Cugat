@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noticias — PP Sant Cugat</title>
+<meta name="description" content="Toda la actualidad municipal del Partido Popular de Sant Cugat del Vallès: mociones, declaraciones y actividad del grupo municipal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
+<script>Layout.header('noticias');</script>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="wrap">
+    <span class="badge" data-i18n="noticias_eyebrow">Actualidad</span>
+    <h1 data-i18n="noticias_page_title">Toda la actualidad municipal del PP Sant Cugat.</h1>
+    <p class="lead" data-i18n="noticias_page_lead">Sigue de cerca la actividad de nuestro grupo municipal: mociones, declaraciones y toda la actualidad política en Sant Cugat.</p>
+  </div>
+</section>
+
+<!-- ============ NOTICIAS ============ -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="news-cards-grid" id="noticiasGrid"></div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script>Layout.footer();</script>
+
+<!-- ============ DATOS DINÁMICOS ============ -->
+<script src="data/videos.js"></script>
+<script src="data/news.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

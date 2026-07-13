@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — PP Sant Cugat</title>
+<meta name="description" content="Ponte en contacto con el Partido Popular de Sant Cugat del Vallès.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
+<script>Layout.header('contacto');</script>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="wrap">
+    <span class="badge" data-i18n="contact_eyebrow">Contacto</span>
+    <h1 data-i18n="contact_title">Hablemos.</h1>
+    <p class="lead" data-i18n="contact_lead">¿Tienes alguna pregunta, propuesta o quieres colaborar con nosotros? Escríbenos y te responderemos lo antes posible.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-box" data-reveal>
+          <h3 data-i18n="contact_info_title">Nuestros datos</h3>
+          <ul>
+            <li>📍 Ajuntament de Sant Cugat, Plaça de la Vila 1, 08172 Sant Cugat del Vallès</li>
+            <li>📞 [93 589 00 00]</li>
+            <li>✉️ [info@ppsantcugat.es]</li>
+          </ul>
+          <div class="social-circles">
+            <a class="scircle" style="background:rgba(255,255,255,.1);color:#fff;" href="#" data-net="facebook">FB</a>
+            <a class="scircle" style="background:rgba(255,255,255,.1);color:#fff;" href="#" data-net="instagram">IG</a>
+            <a class="scircle" style="background:rgba(255,255,255,.1);color:#fff;" href="#" data-net="youtube">YT</a>
+            <a class="scircle" style="background:rgba(255,255,255,.1);color:#fff;" href="#" data-net="x">X</a>
+            <a class="scircle" style="background:rgba(255,255,255,.1);color:#fff;" href="#" data-net="tiktok">TT</a>
+          </div>
+        </div>
+
+        <div class="map-embed" data-reveal>
+          <iframe
+            src="https://www.google.com/maps?q=Ajuntament+de+Sant+Cugat,+Pla%C3%A7a+de+la+Vila+1,+08172+Sant+Cugat+del+Vall%C3%A8s&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Mapa: Ajuntament de Sant Cugat, Plaça de la Vila 1, 08172 Sant Cugat del Vallès">
+          </iframe>
+        </div>
+      </div>
+
+      <form id="contactForm" data-reveal onsubmit="return handleContactSubmit(event)">
+        <div class="field-row">
+          <div class="field">
+            <label data-i18n="form_name">Nombre</label>
+            <input type="text" name="nombre" data-i18n-placeholder="form_name_ph" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label data-i18n="contact_form_lastname">Apellido/s</label>
+            <input type="text" name="apellidos" data-i18n-placeholder="contact_form_lastname_ph" placeholder="Tus apellidos" required>
+          </div>
+        </div>
+        <div class="field">
+          <label data-i18n="form_email">Email</label>
+          <input type="email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="field">
+          <label data-i18n="contact_form_subject">Asunto</label>
+          <input type="text" name="asunto" data-i18n-placeholder="contact_form_subject_ph" placeholder="¿Sobre qué quieres escribirnos?" required>
+        </div>
+        <div class="field">
+          <label data-i18n="contact_form_message">Mensaje</label>
+          <textarea name="mensaje" rows="5" data-i18n-placeholder="contact_form_message_ph" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+        <div class="field">
+          <label data-i18n="contact_captcha_label">Para comprobar que no eres un robot, resuelve: 3 + 2 =</label>
+          <input type="text" name="captcha" inputmode="numeric" autocomplete="off" style="max-width:120px;" required>
+        </div>
+        <label class="checkbox-row">
+          <input type="checkbox" required>
+          <span data-i18n-html="contact_terms_label">He leído y acepto los <a href="privacidad.html" target="_blank" rel="noopener">términos de uso y la política de privacidad</a>, conforme al artículo 13 del RGPD.</span>
+        </label>
+        <button type="submit" class="btn btn-primary submit-btn" style="margin-top:16px;" data-i18n="contact_form_submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script>Layout.footer();</script>
+
+<!-- ============ DATOS DINÁMICOS ============ -->
+<script src="data/videos.js"></script>
+<script src="data/news.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
