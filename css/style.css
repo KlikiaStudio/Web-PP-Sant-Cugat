@@ -303,6 +303,38 @@ footer{background:var(--pp-navy);color:#c4d1f2;padding:72px 0 32px;}
 [data-stagger] > *{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease;}
 [data-stagger].reveal-in > *{opacity:1;transform:translateY(0);}
 
+/* Especial Elecciones 2027: lista completa de propuestas */
+.hub-proposals-list{list-style:none;counter-reset:prop-counter;padding:0;margin:32px 0 0;display:grid;grid-template-columns:repeat(2,1fr);gap:4px 40px;}
+@media(max-width:700px){.hub-proposals-list{grid-template-columns:1fr;}}
+.hub-proposals-list li{counter-increment:prop-counter;padding:14px 0 14px 36px;border-bottom:1px solid var(--border);font-size:15px;color:var(--text);position:relative;}
+.hub-proposals-list li::before{content:counter(prop-counter,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:'Manrope',sans-serif;font-weight:800;color:var(--pp-blue);font-size:13px;}
+
+/* Especial Elecciones 2027: calendario de agenda */
+.agenda-layout{display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start;}
+@media(max-width:800px){.agenda-layout{grid-template-columns:1fr;}}
+.cal-widget{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+.cal-month-label{font-family:'Manrope',sans-serif;font-weight:800;color:var(--pp-navy);font-size:16px;}
+.cal-nav-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);background:#fff;cursor:pointer;font-size:16px;line-height:1;color:var(--pp-navy);display:flex;align-items:center;justify-content:center;}
+.cal-nav-btn:hover{background:var(--bg);}
+.cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;}
+.cal-weekdays div{text-align:center;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.cal-cell{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;position:relative;font-size:13px;color:var(--text);border-radius:8px;}
+.cal-cell.empty{visibility:hidden;}
+.cal-cell.has-event{background:#e9effd;font-weight:700;color:var(--pp-blue);}
+.cal-dot{position:absolute;bottom:4px;width:4px;height:4px;border-radius:50%;background:var(--pp-blue);}
+.agenda-list{display:flex;flex-direction:column;gap:12px;}
+.agenda-item{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;flex-wrap:wrap;}
+.agenda-item-date{font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;color:var(--pp-blue);min-width:110px;}
+.agenda-item-body{flex:1;min-width:160px;}
+.agenda-item-title{font-weight:700;color:var(--pp-navy);}
+.agenda-item-place{font-size:13px;color:var(--muted);}
+.agenda-item-actions{display:flex;gap:8px;}
+.cal-add-btn{font-size:12px;font-weight:700;color:var(--pp-blue);border:1px solid var(--border);border-radius:100px;padding:6px 12px;text-decoration:none;}
+.cal-add-btn:hover{background:var(--bg);}
+.agenda-empty-note{color:var(--muted);font-size:14.5px;margin:0;}
+
 @media (prefers-reduced-motion: reduce){
   *{transition-duration:.01ms !important; animation-duration:.01ms !important;}
   [data-reveal],[data-stagger] > *,.card,.video-card,.news-item,.op-item,.feature-card{opacity:1 !important;transform:none !important;}
