@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especial Elecciones 2027 — PP Sant Cugat</title>
+<meta name="description" content="El candidato, las propuestas por ejes y la agenda de campaña del Partido Popular de Sant Cugat de cara a las elecciones municipales de mayo de 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+<script src="js/layout.js"></script>
+<script>Layout.header('especial');</script>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="wrap">
+    <span class="badge" data-i18n="hub_badge">Especial Elecciones 2027</span>
+    <h1 data-i18n="hub_page_title">Toda la campaña de Sant Cugat, en un solo lugar.</h1>
+    <p class="lead" data-i18n="hub_page_lead">El candidato/a, las propuestas por ejes y la agenda de actos, siempre actualizados.</p>
+  </div>
+</section>
+
+<!-- ============ EL CANDIDATO/A ============ -->
+<section class="about" style="padding-top:0;">
+  <div class="wrap">
+    <div class="about-photo" data-reveal style="background-image:url('img/equipo/alvaro-benejam.png');background-size:cover;background-position:top center;"></div>
+    <div data-reveal>
+      <span class="eyebrow" data-i18n="about_eyebrow">Conócenos</span>
+      <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);color:var(--pp-navy);margin-bottom:16px;" data-i18n="about_title">Álvaro Benejam Peretó</h2>
+      <p style="color:var(--pp-blue);font-weight:700;font-size:13px;max-width:520px;margin-bottom:10px;" data-i18n="about_role">Presidente del Partido Popular de Sant Cugat · Concejal y Portavoz en el Ayuntamiento de Sant Cugat</p>
+      <p style="color:var(--muted);max-width:520px;margin-bottom:20px;" data-i18n="about_bio">Abogado y santcugatense de convicción, Álvaro preside el Partido Popular de Sant Cugat desde 2015. Como concejal y portavoz en el Ayuntamiento, lleva más de una década defendiendo con firmeza los intereses de los vecinos y trabajando por un Sant Cugat más seguro, próspero y bien gestionado.</p>
+      <a href="conocenos.html" class="btn btn-primary" data-i18n="candidate_cta">Conócenos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROPUESTAS POR EJES (subset) ============ -->
+<section id="propuestas" style="background:var(--surface);padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-i18n="prop_eyebrow">Nuestro programa</span>
+        <h2 data-i18n="proposals_section_title">Propuestas por ejes</h2>
+      </div>
+      <a href="propuestas.html" class="section-link" data-i18n="proposals_cta">Ver todas las propuestas →</a>
+    </div>
+    <div class="cards-grid" id="hubProposalsGrid"></div>
+  </div>
+</section>
+
+<!-- ============ AGENDA DEL CANDIDATO/A ============ -->
+<section id="agenda" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" data-i18n="hub_badge">Especial Elecciones 2027</span>
+        <h2 data-i18n="agenda_section_title">Agenda del candidato/a</h2>
+      </div>
+    </div>
+    <div id="agendaWrap" style="display:flex;flex-direction:column;gap:14px;margin-top:32px;"></div>
+  </div>
+</section>
+
+<!-- ============ MODAL: DETALLE DE PROPUESTA (compartido con propuestas.html) ============ -->
+<div class="overlay" id="proposalOverlay">
+  <div class="modal" id="proposalModal">
+    <button class="modal-close" id="proposalModalClose" aria-label="Cerrar">✕</button>
+    <div id="proposalModalContent"></div>
+  </div>
+</div>
+
+<footer id="site-footer"></footer>
+<script>Layout.footer();</script>
+
+<!-- ============ DATOS DINÁMICOS ============ -->
+<script src="data/videos.js"></script>
+<script src="data/news.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
