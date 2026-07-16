@@ -39,7 +39,7 @@
   </div>
 </section>
 
-<!-- ============ PROPUESTAS POR EJES (subset) ============ -->
+<!-- ============ PROPUESTAS POR EJES (lista completa) ============ -->
 <section id="propuestas" style="background:var(--surface);padding-top:0;">
   <div class="wrap">
     <div class="section-head">
@@ -47,9 +47,11 @@
         <span class="eyebrow" data-i18n="prop_eyebrow">Nuestro programa</span>
         <h2 data-i18n="proposals_section_title">Propuestas por ejes</h2>
       </div>
-      <a href="propuestas.html" class="section-link" data-i18n="proposals_cta">Ver todas las propuestas →</a>
     </div>
-    <div class="cards-grid" id="hubProposalsGrid"></div>
+    <div id="hubProposalsGrid"></div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="propuestas.html" class="btn btn-primary" data-i18n="proposals_cta">Ver todas las propuestas en detalle →</a>
+    </div>
   </div>
 </section>
 
@@ -62,17 +64,9 @@
         <h2 data-i18n="agenda_section_title">Agenda del candidato/a</h2>
       </div>
     </div>
-    <div id="agendaWrap" style="display:flex;flex-direction:column;gap:14px;margin-top:32px;"></div>
+    <div id="agendaWrap" style="margin-top:32px;"></div>
   </div>
 </section>
-
-<!-- ============ MODAL: DETALLE DE PROPUESTA (compartido con propuestas.html) ============ -->
-<div class="overlay" id="proposalOverlay">
-  <div class="modal" id="proposalModal">
-    <button class="modal-close" id="proposalModalClose" aria-label="Cerrar">✕</button>
-    <div id="proposalModalContent"></div>
-  </div>
-</div>
 
 <footer id="site-footer"></footer>
 <script>Layout.footer();</script>
