@@ -59,7 +59,7 @@
       + '      </div>'
       + '    </a>'
       + '    <ul class="nav-links" id="navLinks">' + links + '</ul>'
-      + '    <a href="index.html#hub" class="btn btn-primary nav-cta" data-i18n="nav_cta">Especial Elecciones 2027</a>'
+      + '    <a href="especial-elecciones-2027.html" class="btn btn-primary nav-cta" data-i18n="nav_cta">Especial Elecciones 2027</a>'
       + '    <button class="menu-toggle" id="menuToggle" aria-label="Menú">'
       + '      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>'
       + '    </button>'
