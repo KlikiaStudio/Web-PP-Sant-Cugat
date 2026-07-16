@@ -11,11 +11,9 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
 <div id="site-header"></div>
 <script src="js/layout.js"></script>
 <script>Layout.header('inicio');</script>
-
 <!-- ============ HERO ============ -->
 <header class="hero" id="inicio">
   <div class="wrap">
@@ -24,7 +22,7 @@
       <h1 data-i18n-html="hero_title">Un nuevo impulso para <span class="accent">Sant Cugat</span>.</h1>
       <p class="lead" data-i18n="hero_lead">Construimos una alternativa sólida para recuperar la seguridad, fomentar la vivienda joven y dinamizar nuestra economía local. Con propuestas reales y una gestión centrada en las personas.</p>
       <div class="hero-actions">
-        <a href="#hub" class="btn btn-primary" data-i18n="hero_cta1">Especial Elecciones 2027 →</a>
+        <a href="especial-elecciones-2027.html" class="btn btn-primary" data-i18n="hero_cta1">Especial Elecciones 2027 →</a>
         <a href="afiliate.html" class="btn btn-ghost" data-i18n="hero_cta2">Únete</a>
       </div>
       <div class="hero-meta">
@@ -34,16 +32,15 @@
     </div>
     <div class="hero-media">
       <div class="hero-photo">
-        <div class="ph-note" data-i18n="hero_photo_note">[Sustituir por fotografía real del candidato/a — assets/candidato.jpg]</div>
+        <img src="assets/candidato.jpg" alt="Álvaro Benejam Peretó" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
       </div>
       <div class="hero-quote">
         <p data-i18n="hero_quote">"Sant Cugat merece una gestión que piense en las familias y en los jóvenes."</p>
-        <div class="who">[Nombre del Candidato/a]</div>
+        <div class="who">Álvaro Benejam Peretó</div>
       </div>
     </div>
   </div>
 </header>
-
 <!-- ============ HUB BANNER ============ -->
 <section id="hub" style="padding:0 0 100px;">
   <div class="hub" data-reveal>
@@ -61,7 +58,7 @@
         <a href="especial-elecciones-2027.html#propuestas" class="hub-stat">
           <div class="hub-stat-left">
             <div class="hub-stat-icon">✦</div>
-            <div><div class="hub-stat-label" data-i18n="hub_stat1_label">Propuestas</div><div class="hub-stat-value" data-i18n="hub_stat1_value">12 ejes</div></div>
+            <div><div class="hub-stat-label" data-i18n="hub_stat1_label">Propuestas</div><div class="hub-stat-value" data-i18n="hub_stat1_value">18 ejes</div></div>
           </div>
           <span>↗</span>
         </a>
@@ -83,7 +80,6 @@
     </div>
   </div>
 </section>
-
 <!-- ============ VIDEOS ============ -->
 <section id="videos" style="background:var(--surface);">
   <div class="wrap">
@@ -97,7 +93,6 @@
     <div class="video-row" id="videoRow"></div>
   </div>
 </section>
-
 <!-- ============ ACTUALIDAD (noticias principales) ============ -->
 <section id="actualidad">
   <div class="wrap">
@@ -108,7 +103,6 @@
       </div>
       <div id="newsList"></div>
     </div>
-
     <div class="feature-row">
       <div class="feature-card blue" data-reveal>
         <span class="soon-pill" data-i18n="soon">Próximamente</span>
@@ -127,10 +121,8 @@
     </div>
   </div>
 </section>
-
 <footer id="site-footer"></footer>
 <script>Layout.footer();</script>
-
 <!-- ============ DATOS DINÁMICOS ============ -->
 <script src="data/videos.js"></script>
 <script src="data/news.js"></script>
