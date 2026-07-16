@@ -21,7 +21,7 @@
   <div class="wrap">
     <span class="badge" data-i18n="prop_eyebrow">Nuestro programa</span>
     <h1 data-i18n="prop_title">Ejes estratégicos para el Sant Cugat que viene.</h1>
-    <p class="lead" data-i18n="prop_lead">Un programa realista, pensado para dar respuesta a los problemas reales de nuestros vecinos y vecinas.</p>
+    <p class="lead" data-i18n="prop_lead">Un programa realista, ordenado por lo que más importa a los vecinos y vecinas de Sant Cugat, pensado para dar respuesta a los problemas reales del día a día.</p>
   </div>
 </section>
 
@@ -31,6 +31,14 @@
     <div class="cards-grid" id="proposalsGrid"></div>
   </div>
 </section>
+
+<!-- ============ MODAL: DETALLE DE PROPUESTA ============ -->
+<div class="overlay" id="proposalOverlay">
+  <div class="modal" id="proposalModal">
+    <button class="modal-close" id="proposalModalClose" aria-label="Cerrar">✕</button>
+    <div id="proposalModalContent"></div>
+  </div>
+</div>
 
 <footer id="site-footer"></footer>
 <script>Layout.footer();</script>
