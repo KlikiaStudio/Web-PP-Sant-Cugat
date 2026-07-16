@@ -14,6 +14,13 @@ const I18N = {
     hub_cta1:"Explorar el hub →", hub_cta2:"Suscribirme a novedades",
     hub_stat1_label:"Propuestas", hub_stat1_value:"12 ejes",
     hub_stat2_label:"Agenda", hub_stat2_value:"Próximos actos",
+    hub_page_title:"Toda la campaña de Sant Cugat, en un solo lugar.",
+    hub_page_lead:"El candidato/a, las propuestas por ejes y la agenda de actos, siempre actualizados.",
+    candidate_cta:"Conócenos →",
+    proposals_section_title:"Propuestas por ejes",
+    proposals_cta:"Ver todas las propuestas →",
+    agenda_section_title:"Agenda del candidato/a",
+    agenda_empty:"Muy pronto publicaremos aquí la agenda de actos y visitas del candidato/a.",
     prop_eyebrow:"Nuestro programa", prop_title:"Ejes estratégicos para el Sant Cugat que viene.",
     prop_lead:"Un programa realista, ordenado por lo que más importa a los vecinos y vecinas de Sant Cugat, pensado para dar respuesta a los problemas reales del día a día.",
     prop_link:"VER TODAS LAS PROPUESTAS →", prop_label:"Propuestas",
@@ -72,6 +79,13 @@ const I18N = {
     hub_cta1:"Explorar el hub →", hub_cta2:"Subscriure'm a novetats",
     hub_stat1_label:"Propostes", hub_stat1_value:"12 eixos",
     hub_stat2_label:"Agenda", hub_stat2_value:"Propers actes",
+    hub_page_title:"Tota la campanya de Sant Cugat, en un sol lloc.",
+    hub_page_lead:"El candidat/a, les propostes per eixos i l'agenda d'actes, sempre actualitzats.",
+    candidate_cta:"Coneix-nos →",
+    proposals_section_title:"Propostes per eixos",
+    proposals_cta:"Veure totes les propostes →",
+    agenda_section_title:"Agenda del candidat/a",
+    agenda_empty:"Ben aviat publicarem aquí l'agenda d'actes i visites del candidat/a.",
     prop_eyebrow:"El nostre programa", prop_title:"Eixos estratègics per al Sant Cugat que ve.",
     prop_lead:"Un programa realista, ordenat pel que més importa als veïns i veïnes de Sant Cugat, pensat per donar resposta als problemes reals del dia a dia.",
     prop_link:"VEURE TOTES LES PROPOSTES →", prop_label:"Propostes",
@@ -715,6 +729,8 @@ function applyLang(lang){
     b.classList.toggle('active', b.getAttribute('data-lang') === lang);
   });
   renderProposals(lang);
+  renderHubProposals(lang);
+  renderAgenda(lang);
   renderVideos(lang);
   renderHomeNews(lang);
   renderNoticiasPage(lang);
@@ -797,6 +813,56 @@ function renderTeam(lang){
   `;
   }).join('');
   observeReveal(grid.querySelectorAll('.team-card'), true);
+}
+
+/* ==================== RENDER: ESPECIAL ELECCIONES 2027 (subset de propuestas) ==================== */
+function renderHubProposals(lang){
+  const grid = document.getElementById('hubProposalsGrid');
+  if(!grid) return;
+  const subset = PROPOSALS.slice(0, 6);
+  grid.innerHTML = subset.map((p)=>{
+    const realIndex = PROPOSALS.indexOf(p);
+    return `
+    <div class="card">
+      <div class="card-top">
+        <div class="card-icon">${p.icon}</div>
+      </div>
+      <h3>${p[lang].claim}</h3>
+      <p>${p[lang].subclaim}</p>
+      <button class="card-link" onclick="openProposalModal(${realIndex})" style="background:none;border:none;cursor:pointer;">${LEER_MAS[lang]}</button>
+    </div>
+  `;
+  }).join('');
+  observeReveal(grid.querySelectorAll('.card'), true);
+}
+
+/* ==================== RENDER: AGENDA DEL CANDIDATO/A ====================
+   A la espera del flujo Cowork → GitHub Action → data/agenda.json.
+   En cuanto exista window.SITE_AGENDA (array de {date, title, place}), se listará aquí;
+   mientras tanto se muestra el mismo aviso "Próximamente" que ya usáis en Foto-Denuncia/Mapa de Abandono. */
+function renderAgenda(lang){
+  const wrap = document.getElementById('agendaWrap');
+  if(!wrap) return;
+  const agenda = window.SITE_AGENDA || [];
+  if(!agenda.length){
+    wrap.innerHTML = `
+      <div class="feature-card dark" data-reveal>
+        <span class="soon-pill" data-i18n="soon">${I18N[lang].soon}</span>
+        <div class="feature-icon">📅</div>
+        <p style="margin:0;">${I18N[lang].agenda_empty}</p>
+      </div>
+    `;
+    observeReveal(wrap.querySelectorAll('.feature-card'), false);
+    return;
+  }
+  wrap.innerHTML = agenda.map(a=>`
+    <div class="hub-stat" style="background:var(--surface);border-color:var(--border);">
+      <div class="hub-stat-left">
+        <div class="hub-stat-icon" style="background:var(--pp-blue);color:#fff;">📅</div>
+        <div><div class="hub-stat-label" style="color:var(--muted);">${formatDate(a.date, lang)}</div><div class="hub-stat-value" style="color:var(--text);">${a.title}${a.place ? ' · '+a.place : ''}</div></div>
+      </div>
+    </div>
+  `).join('');
 }
 
 /* ==================== RENDER: VIDEOS ==================== */
