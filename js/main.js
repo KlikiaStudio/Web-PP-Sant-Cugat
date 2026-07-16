@@ -25,8 +25,9 @@ const I18N = {
     about_eyebrow:"Conócenos",
     conocenos_page_title:"El Partido Popular en Sant Cugat.",
     conocenos_page_lead:"Trabajamos cada día desde el Ayuntamiento para defender los intereses de los vecinos y vecinas de Sant Cugat. Conoce a las personas que lideran este proyecto.",
-    about_title:"[Nombre del Candidato/a]",
-    about_bio:"[Biografía real del candidato/a — trayectoria, vinculación con Sant Cugat y motivación para presentarse a las elecciones de mayo de 2027. Sustituir por el texto real.]",
+    about_title:"Álvaro Benejam Peretó",
+    about_role:"Presidente del Partido Popular de Sant Cugat · Concejal y Portavoz en el Ayuntamiento de Sant Cugat",
+    about_bio:"Abogado y santcugatense de convicción, Álvaro preside el Partido Popular de Sant Cugat desde 2015. Como concejal y portavoz en el Ayuntamiento, lleva más de una década defendiendo con firmeza los intereses de los vecinos y trabajando por un Sant Cugat más seguro, próspero y bien gestionado.",
     about_stat1:"Años en Sant Cugat", about_stat2:"Vecinos escuchados", about_stat3:"Propuestas presentadas",
     team_title:"Nuestro equipo",
     team_note:"Muy pronto publicaremos una página individual con la trayectoria completa de cada candidato/a.",
@@ -82,8 +83,9 @@ const I18N = {
     about_eyebrow:"Coneix-nos",
     conocenos_page_title:"El Partit Popular a Sant Cugat.",
     conocenos_page_lead:"Treballem cada dia des de l'Ajuntament per defensar els interessos dels veïns i veïnes de Sant Cugat. Coneix les persones que lideren aquest projecte.",
-    about_title:"[Nom del Candidat/a]",
-    about_bio:"[Biografia real del candidat/a — trajectòria, vinculació amb Sant Cugat i motivació per presentar-se a les eleccions de maig de 2027. Substituir pel text real.]",
+    about_title:"Álvaro Benejam Peretó",
+    about_role:"President del Partit Popular de Sant Cugat · Regidor i Portaveu a l'Ajuntament de Sant Cugat",
+    about_bio:"Advocat i santcugatenc de convicció, l'Àlvaro presideix el Partit Popular de Sant Cugat des de 2015. Com a regidor i portaveu a l'Ajuntament, porta més d'una dècada defensant amb fermesa els interessos dels veïns i treballant per un Sant Cugat més segur, pròsper i ben gestionat.",
     about_stat1:"Anys a Sant Cugat", about_stat2:"Veïns escoltats", about_stat3:"Propostes presentades",
     team_title:"El nostre equip",
     team_note:"Molt aviat publicarem una pàgina individual amb la trajectòria completa de cada candidat/a.",
@@ -137,18 +139,19 @@ const PROPOSALS = [
   { icon:"💼", es:{t:"Economía local", d:"Rebajas fiscales para autónomos y comercio."}, ca:{t:"Economia local", d:"Rebaixes fiscals per a autònoms i comerç."} }
 ];
 
-/* Equipo: personas reales identificadas en las noticias del PP Sant Cugat (hoja de contenidos).
-   A la espera de biografías completas — placeholders entre corchetes hasta recibir el texto real. */
+/* Equipo: Álvaro Benejam ya aparece como candidato/hero de la sección "about", por lo que
+   no se repite en este grid. Aquí van los otros 3 cargos públicos, con foto real. Solo
+   nombre + cargo por decisión del equipo — la biografía completa irá en su página individual. */
 const TEAM = [
-  { name:"Álvaro Benejam",
-    es:{ role:"Regidor del PP y miembro del Comité Ejecutivo del PP de Catalunya", bio:"[Trayectoria y biografía pendientes de completar.]" },
-    ca:{ role:"Regidor del PP i membre del Comitè Executiu del PP de Catalunya", bio:"[Trajectòria i biografia pendents de completar.]" } },
-  { name:"Alfredo Bergua",
-    es:{ role:"Regidor del PP en el Ayuntamiento de Sant Cugat", bio:"[Trayectoria y biografía pendientes de completar.]" },
-    ca:{ role:"Regidor del PP a l'Ajuntament de Sant Cugat", bio:"[Trajectòria i biografia pendents de completar.]" } },
-  { name:"Estrella Salanova",
-    es:{ role:"Regidora del PP en el Ayuntamiento de Sant Cugat", bio:"[Trayectoria y biografía pendientes de completar.]" },
-    ca:{ role:"Regidora del PP a l'Ajuntament de Sant Cugat", bio:"[Trajectòria i biografia pendents de completar.]" } }
+  { name:"Alfredo Bergua Valls", photo:"img/equipo/alfredo-bergua.png",
+    es:{ role:"Secretario General del PP Sant Cugat · Concejal en el Ayuntamiento", bio:"" },
+    ca:{ role:"Secretari General del PP Sant Cugat · Regidor a l'Ajuntament", bio:"" } },
+  { name:"Estrella Salanova Casajuana", photo:"img/equipo/estrella-salanova.png",
+    es:{ role:"Responsable de Relaciones Institucionales · Concejal en el Ayuntamiento", bio:"" },
+    ca:{ role:"Responsable de Relacions Institucionals · Regidora a l'Ajuntament", bio:"" } },
+  { name:"Carlos Aranguren Vázquez", photo:"img/equipo/carlos-aranguren.png",
+    es:{ role:"Responsable de Estudios y Programas · Vocal en la EMD de Valldoreix", bio:"" },
+    ca:{ role:"Responsable d'Estudis i Programes · Vocal a l'EMD de Valldoreix", bio:"" } }
 ];
 
 const LEER_MAS = { es:"Leer más →", ca:"Llegir més →" };
@@ -208,14 +211,18 @@ function renderProposals(lang){
 function renderTeam(lang){
   const grid = document.getElementById('teamGrid');
   if(!grid) return;
-  grid.innerHTML = TEAM.map(m=>`
+  grid.innerHTML = TEAM.map(m=>{
+    const photoStyle = m.photo ? ` style="background-image:url('${m.photo}');background-size:cover;background-position:top center;"` : '';
+    const bio = m[lang].bio;
+    return `
     <div class="team-card">
-      <div class="team-photo"></div>
+      <div class="team-photo"${photoStyle}></div>
       <h3>${m.name}</h3>
       <div class="team-role">${m[lang].role}</div>
-      <p>${m[lang].bio}</p>
+      ${bio ? `<p>${bio}</p>` : ''}
     </div>
-  `).join('');
+  `;
+  }).join('');
   observeReveal(grid.querySelectorAll('.team-card'), true);
 }
 
