@@ -18,7 +18,7 @@ const I18N = {
     hub_page_lead:"El candidato/a, las propuestas por ejes y la agenda de actos, siempre actualizados.",
     candidate_cta:"Conócenos →",
     proposals_section_title:"Propuestas por ejes",
-    proposals_cta:"Ver todas las propuestas →",
+    proposals_cta:"Ver todas las propuestas en detalle →",
     agenda_section_title:"Agenda del candidato/a",
     agenda_empty:"Muy pronto publicaremos aquí la agenda de actos y visitas del candidato/a.",
     prop_eyebrow:"Nuestro programa", prop_title:"Ejes estratégicos para el Sant Cugat que viene.",
@@ -83,7 +83,7 @@ const I18N = {
     hub_page_lead:"El candidat/a, les propostes per eixos i l'agenda d'actes, sempre actualitzats.",
     candidate_cta:"Coneix-nos →",
     proposals_section_title:"Propostes per eixos",
-    proposals_cta:"Veure totes les propostes →",
+    proposals_cta:"Veure totes les propostes en detall →",
     agenda_section_title:"Agenda del candidat/a",
     agenda_empty:"Ben aviat publicarem aquí l'agenda d'actes i visites del candidat/a.",
     prop_eyebrow:"El nostre programa", prop_title:"Eixos estratègics per al Sant Cugat que ve.",
@@ -815,54 +815,137 @@ function renderTeam(lang){
   observeReveal(grid.querySelectorAll('.team-card'), true);
 }
 
-/* ==================== RENDER: ESPECIAL ELECCIONES 2027 (subset de propuestas) ==================== */
+/* ==================== RENDER: ESPECIAL ELECCIONES 2027 (lista completa de propuestas) ==================== */
 function renderHubProposals(lang){
   const grid = document.getElementById('hubProposalsGrid');
   if(!grid) return;
-  const subset = PROPOSALS.slice(0, 6);
-  grid.innerHTML = subset.map((p)=>{
-    const realIndex = PROPOSALS.indexOf(p);
-    return `
-    <div class="card">
-      <div class="card-top">
-        <div class="card-icon">${p.icon}</div>
-      </div>
-      <h3>${p[lang].claim}</h3>
-      <p>${p[lang].subclaim}</p>
-      <button class="card-link" onclick="openProposalModal(${realIndex})" style="background:none;border:none;cursor:pointer;">${LEER_MAS[lang]}</button>
-    </div>
-  `;
-  }).join('');
-  observeReveal(grid.querySelectorAll('.card'), true);
+  grid.innerHTML = `<ol class="hub-proposals-list">${PROPOSALS.map(p=>`<li>${p[lang].claim}</li>`).join('')}</ol>`;
 }
 
-/* ==================== RENDER: AGENDA DEL CANDIDATO/A ====================
-   A la espera del flujo Cowork → GitHub Action → data/agenda.json.
-   En cuanto exista window.SITE_AGENDA (array de {date, title, place}), se listará aquí;
-   mientras tanto se muestra el mismo aviso "Próximamente" que ya usáis en Foto-Denuncia/Mapa de Abandono. */
+/* ==================== AGENDA: helpers de calendario (.ics / Google Calendar) ==================== */
+function pad2(n){ return String(n).padStart(2,'0'); }
+
+function icsDate(dateStr, timeStr){
+  const datePart = dateStr.replace(/-/g,'');
+  if(timeStr){
+    const [h,m] = timeStr.split(':');
+    return datePart + 'T' + pad2(h) + pad2(m) + '00';
+  }
+  return datePart;
+}
+
+function icsEndDate(ev){
+  if(ev.time){
+    const d = new Date(ev.date+'T'+ev.time+':00');
+    d.setHours(d.getHours()+1);
+    return d.getFullYear()+pad2(d.getMonth()+1)+pad2(d.getDate())+'T'+pad2(d.getHours())+pad2(d.getMinutes())+'00';
+  }
+  const d = new Date(ev.date+'T00:00:00');
+  d.setDate(d.getDate()+1);
+  return d.getFullYear()+''+pad2(d.getMonth()+1)+pad2(d.getDate());
+}
+
+function googleCalUrl(ev){
+  const start = icsDate(ev.date, ev.time);
+  const end = icsEndDate(ev);
+  const params = new URLSearchParams({
+    action:'TEMPLATE', text:ev.title||'', dates:start+'/'+end,
+    details:ev.description||'', location:ev.place||''
+  });
+  return 'https://calendar.google.com/calendar/render?' + params.toString();
+}
+
+function icsFileHref(ev){
+  const dtStart = icsDate(ev.date, ev.time);
+  const dtEnd = icsEndDate(ev);
+  const lines = [
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//PP Sant Cugat//Agenda//ES','BEGIN:VEVENT',
+    'UID:'+dtStart+'-'+Math.random().toString(36).slice(2)+'@ppsantcugat.es',
+    'DTSTAMP:'+dtStart,
+    (ev.time ? 'DTSTART:' : 'DTSTART;VALUE=DATE:')+dtStart,
+    (ev.time ? 'DTEND:' : 'DTEND;VALUE=DATE:')+dtEnd,
+    'SUMMARY:'+(ev.title||''),
+    ev.place ? 'LOCATION:'+ev.place : '',
+    ev.description ? 'DESCRIPTION:'+ev.description : '',
+    'END:VEVENT','END:VCALENDAR'
+  ].filter(Boolean).join('\r\n');
+  return 'data:text/calendar;charset=utf8,' + encodeURIComponent(lines);
+}
+
+/* ==================== RENDER: AGENDA DEL CANDIDATO/A (calendario real) ====================
+   A la espera del flujo Cowork → GitHub Action → data/agenda.json. En cuanto exista
+   window.SITE_AGENDA (array de {date:'YYYY-MM-DD', time:'HH:MM'?, title, place?, description?})
+   los actos se marcarán en el calendario y se listarán debajo con botones para añadirlos
+   a Google Calendar o descargar un .ics (Apple Calendar / Outlook). Mientras no haya datos,
+   el calendario se muestra igualmente (mes actual, navegable) sin días marcados. */
+let agendaViewDate = new Date();
+
+function changeAgendaMonth(delta){
+  agendaViewDate = new Date(agendaViewDate.getFullYear(), agendaViewDate.getMonth()+delta, 1);
+  renderAgenda(currentLang);
+}
+
 function renderAgenda(lang){
   const wrap = document.getElementById('agendaWrap');
   if(!wrap) return;
   const agenda = window.SITE_AGENDA || [];
-  if(!agenda.length){
-    wrap.innerHTML = `
-      <div class="feature-card dark" data-reveal>
-        <span class="soon-pill" data-i18n="soon">${I18N[lang].soon}</span>
-        <div class="feature-icon">📅</div>
-        <p style="margin:0;">${I18N[lang].agenda_empty}</p>
-      </div>
-    `;
-    observeReveal(wrap.querySelectorAll('.feature-card'), false);
-    return;
+  const year = agendaViewDate.getFullYear();
+  const month = agendaViewDate.getMonth();
+  const startWeekday = (new Date(year, month, 1).getDay() + 6) % 7; // lunes=0
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+  let monthLabel = agendaViewDate.toLocaleDateString(lang==='ca'?'ca-ES':'es-ES', {month:'long', year:'numeric'});
+  monthLabel = monthLabel.charAt(0).toUpperCase() + monthLabel.slice(1);
+  const weekdayLabels = lang==='ca' ? ['Dl','Dt','Dc','Dj','Dv','Ds','Dg'] : ['L','M','X','J','V','S','D'];
+
+  const eventsByDay = {};
+  agenda.forEach(ev=>{
+    if(!ev.date) return;
+    const d = new Date(ev.date+'T00:00:00');
+    if(d.getFullYear()===year && d.getMonth()===month){
+      (eventsByDay[d.getDate()] = eventsByDay[d.getDate()] || []).push(ev);
+    }
+  });
+
+  let cells = '';
+  for(let i=0;i<startWeekday;i++) cells += `<div class="cal-cell empty"></div>`;
+  for(let day=1; day<=daysInMonth; day++){
+    const hasEvent = !!eventsByDay[day];
+    cells += `<div class="cal-cell${hasEvent?' has-event':''}"><span>${day}</span>${hasEvent?'<i class="cal-dot"></i>':''}</div>`;
   }
-  wrap.innerHTML = agenda.map(a=>`
-    <div class="hub-stat" style="background:var(--surface);border-color:var(--border);">
-      <div class="hub-stat-left">
-        <div class="hub-stat-icon" style="background:var(--pp-blue);color:#fff;">📅</div>
-        <div><div class="hub-stat-label" style="color:var(--muted);">${formatDate(a.date, lang)}</div><div class="hub-stat-value" style="color:var(--text);">${a.title}${a.place ? ' · '+a.place : ''}</div></div>
+
+  const upcoming = agenda
+    .filter(ev=>ev.date)
+    .map(ev=>({ ev, d:new Date(ev.date+'T'+(ev.time||'00:00')+':00') }))
+    .sort((a,b)=>a.d-b.d);
+
+  const listHTML = upcoming.length ? upcoming.map(({ev})=>`
+    <div class="agenda-item">
+      <div class="agenda-item-date">${formatDate(ev.date, lang)}${ev.time ? ' · '+ev.time+'h' : ''}</div>
+      <div class="agenda-item-body">
+        <div class="agenda-item-title">${ev.title||''}</div>
+        ${ev.place ? `<div class="agenda-item-place">${ev.place}</div>` : ''}
+      </div>
+      <div class="agenda-item-actions">
+        <a href="${googleCalUrl(ev)}" target="_blank" rel="noopener" class="cal-add-btn">Google Calendar</a>
+        <a href="${icsFileHref(ev)}" download="${(ev.title||'evento').replace(/[^a-z0-9]+/gi,'-').toLowerCase()}.ics" class="cal-add-btn">.ics</a>
       </div>
     </div>
-  `).join('');
+  `).join('') : `<p class="agenda-empty-note">${I18N[lang].agenda_empty}</p>`;
+
+  wrap.innerHTML = `
+    <div class="agenda-layout">
+      <div class="cal-widget">
+        <div class="cal-header">
+          <button class="cal-nav-btn" onclick="changeAgendaMonth(-1)" aria-label="Mes anterior">‹</button>
+          <div class="cal-month-label">${monthLabel}</div>
+          <button class="cal-nav-btn" onclick="changeAgendaMonth(1)" aria-label="Mes siguiente">›</button>
+        </div>
+        <div class="cal-weekdays">${weekdayLabels.map(w=>`<div>${w}</div>`).join('')}</div>
+        <div class="cal-grid">${cells}</div>
+      </div>
+      <div class="agenda-list">${listHTML}</div>
+    </div>
+  `;
 }
 
 /* ==================== RENDER: VIDEOS ==================== */
