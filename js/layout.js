@@ -49,7 +49,7 @@
       + '<nav class="nav">'
       + '  <div class="wrap">'
       + '    <a href="index.html" class="brand">'
-      + '      <img id="logoImg" src="img/equipo/Logo PP web.png" alt="Logo Partido Popular" style="height:40px;width:auto;">'
+      + '      <img id="logoImg" src="img/equipo/Logo PP web.png" alt="Logo Partido Popular" style="height:80px;width:auto;">'
       + '    </a>'
       + '    <ul class="nav-links" id="navLinks">' + links + '</ul>'
       + '    <a href="especial-elecciones-2027.html" class="btn btn-primary nav-cta" data-i18n="nav_cta">Especial Elecciones 2027</a>'
