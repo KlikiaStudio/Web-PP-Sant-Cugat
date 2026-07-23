@@ -9,11 +9,81 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 520px;
+    margin: 20px;
+    position: relative;
+  }
+  .modal-box h3 { font-size: 1.4rem; margin-bottom: 6px; color: #0d1b3e; }
+  .modal-box p { color: #555; margin-bottom: 24px; font-size: 0.95rem; }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 20px;
+    background: none; border: none;
+    font-size: 1.5rem; cursor: pointer; color: #888;
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #0d1b3e; }
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #dde2ee;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    transition: border .2s;
+    box-sizing: border-box;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: #2563eb; }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .btn-submit {
+    width: 100%;
+    padding: 13px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background .2s;
+  }
+  .btn-submit:hover { background: #1d4ed8; }
+  .form-success {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .form-success .icon { font-size: 3rem; margin-bottom: 12px; }
+  .form-success h4 { color: #0d1b3e; font-size: 1.2rem; margin-bottom: 8px; }
+  .form-success p { color: #555; }
+</style>
 </head>
 <body>
 <div id="site-header"></div>
 <script src="js/layout.js"></script>
 <script>Layout.header('inicio');</script>
+
 <!-- ============ HERO ============ -->
 <header class="hero" id="inicio">
   <div class="wrap">
@@ -41,6 +111,7 @@
     </div>
   </div>
 </header>
+
 <!-- ============ HUB BANNER ============ -->
 <section id="hub" style="padding:0 0 100px;">
   <div class="hub" data-reveal>
@@ -80,6 +151,7 @@
     </div>
   </div>
 </section>
+
 <!-- ============ VIDEOS ============ -->
 <section id="videos" style="background:var(--surface);">
   <div class="wrap">
@@ -93,6 +165,7 @@
     <div class="video-row" id="videoRow"></div>
   </div>
 </section>
+
 <!-- ============ ACTUALIDAD (noticias principales) ============ -->
 <section id="actualidad">
   <div class="wrap">
@@ -105,20 +178,91 @@
     </div>
     <div class="feature-row">
       <div class="feature-card blue" data-reveal style="width:100%;max-width:100%;">
-        <span class="soon-pill" data-i18n="soon">Próximamente</span>
         <div class="feature-icon">📷</div>
         <h3>Denuncia ciudadana</h3>
         <p>¿Has visto algo que no funciona en tu barrio? Envíanos una foto, un comentario o una queja y lo llevamos al pleno. Tu voz importa.</p>
-        <span class="btn btn-ghost-dark" style="opacity:.6;cursor:not-allowed;">Enviar denuncia</span>
+        <button class="btn btn-ghost-dark" onclick="document.getElementById('modalDenuncia').classList.add('active')">Enviar denuncia</button>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ============ MODAL DENUNCIA ============ -->
+<div class="modal-overlay" id="modalDenuncia">
+  <div class="modal-box">
+    <button class="modal-close" onclick="cerrarModal()">✕</button>
+    <div id="formContent">
+      <h3>📷 Envía tu denuncia</h3>
+      <p>Rellena el formulario y nos pondremos en contacto contigo. Toda denuncia llega directamente al equipo del PP Sant Cugat.</p>
+      <form action="https://formspree.io/f/xeeylwga" method="POST" enctype="multipart/form-data" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Nombre completo *</label>
+          <input type="text" name="nombre" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-group">
+          <label>Email de contacto *</label>
+          <input type="email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Tipo de denuncia</label>
+          <select name="tipo">
+            <option value="">Selecciona una categoría</option>
+            <option value="seguridad">Seguridad ciudadana</option>
+            <option value="urbanismo">Urbanismo y obras</option>
+            <option value="limpieza">Limpieza y residuos</option>
+            <option value="movilidad">Movilidad y transporte</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Descripción *</label>
+          <textarea name="mensaje" placeholder="Describe el problema con el mayor detalle posible..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Adjuntar foto (opcional)</label>
+          <input type="file" name="foto" accept="image/*">
+        </div>
+        <button type="submit" class="btn-submit">Enviar denuncia →</button>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="icon">✅</div>
+      <h4>¡Denuncia recibida!</h4>
+      <p>Gracias por tu mensaje. Nuestro equipo la revisará y se pondrá en contacto contigo lo antes posible.</p>
+    </div>
+  </div>
+</div>
+
 <footer id="site-footer"></footer>
 <script>Layout.footer();</script>
 <!-- ============ DATOS DINÁMICOS ============ -->
 <script src="data/videos.js"></script>
 <script src="data/news.js"></script>
 <script src="js/main.js"></script>
+<script>
+  function cerrarModal() {
+    document.getElementById('modalDenuncia').classList.remove('active');
+    document.getElementById('formContent').style.display = 'block';
+    document.getElementById('formSuccess').style.display = 'none';
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r) {
+      if (r.ok) {
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }
+    });
+  }
+  document.getElementById('modalDenuncia').addEventListener('click', function(e) {
+    if (e.target === this) cerrarModal();
+  });
+</script>
 </body>
 </html>
