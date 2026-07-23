@@ -19,13 +19,11 @@
     { id: 'afiliate',   href: 'afiliate.html',    i18n: 'nav_afiliate' },
     { id: 'contacto',   href: 'contacto.html',    i18n: 'nav_contacto' }
   ];
-
   function headerHTML(active) {
     var links = NAV_ITEMS.map(function (item) {
       var cls = item.id === active ? ' class="active-link"' : '';
       return '<li><a href="' + item.href + '" data-i18n="' + item.i18n + '"' + cls + '></a></li>';
     }).join('');
-
     return ''
       + '<div class="topbar">'
       + '  <div class="wrap">'
@@ -51,12 +49,7 @@
       + '<nav class="nav">'
       + '  <div class="wrap">'
       + '    <a href="index.html" class="brand">'
-      + '      <img id="logoImg" src="assets/logo-pp.png" alt="Logo Partido Popular" onerror="this.remove();document.getElementById(\'logoFallback\').style.display=\'flex\';">'
-      + '      <div class="brand-mark" id="logoFallback" style="display:none;">P.</div>'
-      + '      <div class="brand-text">'
-      + '        <span class="n1">PP</span>'
-      + '        <span class="n2">SANT CUGAT</span>'
-      + '      </div>'
+      + '      <img id="logoImg" src="img/equipo/Logo PP web.png" alt="Logo Partido Popular" style="height:40px;width:auto;">'
       + '    </a>'
       + '    <ul class="nav-links" id="navLinks">' + links + '</ul>'
       + '    <a href="especial-elecciones-2027.html" class="btn btn-primary nav-cta" data-i18n="nav_cta">Especial Elecciones 2027</a>'
@@ -66,15 +59,13 @@
       + '  </div>'
       + '</nav>';
   }
-
   function footerHTML() {
     return ''
       + '<div class="wrap">'
       + '  <div class="footer-grid">'
       + '    <div class="footer-brand">'
       + '      <div class="brand" style="margin-bottom:4px;">'
-      + '        <div class="brand-mark" style="width:36px;height:36px;font-size:16px;">P.</div>'
-      + '        <div class="brand-text"><span class="n1" style="color:#fff;">PP</span><span class="n2">SANT CUGAT</span></div>'
+      + '        <img src="img/equipo/Logo PP web.png" alt="Logo Partido Popular" style="height:36px;width:auto;">'
       + '      </div>'
       + '      <p data-i18n="footer_desc">Trabajamos cada día por un Sant Cugat mejor, más seguro y próspero para todas las personas que viven en nuestra ciudad.</p>'
       + '      <div class="social-circles">'
@@ -120,7 +111,6 @@
       + '  </div>'
       + '</div>';
   }
-
   window.Layout = {
     header: function (active) {
       document.getElementById('site-header').innerHTML = headerHTML(active);
