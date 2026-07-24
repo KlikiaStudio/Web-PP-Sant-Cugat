@@ -59,7 +59,8 @@ const I18N = {
     contact_captcha_error:"La respuesta de la comprobación anti-robots no es correcta.",
     contact_form_submit:"Enviar mensaje",
     legal_eyebrow:"Legal", legal_title:"Términos de uso y política de privacidad",
-    legal_intro:"[Contenido pendiente. Aquí se publicará el texto legal completo: identidad del responsable del tratamiento, finalidad y legitimación del tratamiento de datos, plazo de conservación, destinatarios y cesiones, y el procedimiento para ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad, conforme al artículo 13 del Reglamento (UE) 2016/679 (RGPD) y la LOPDGDD.]",
+    legal_intro:"Este documento recoge el aviso legal, la política de privacidad y la política de cookies de Partido Popular de Sant Cugat, conforme a la Ley 34/2002 (LSSICE) y al Reglamento (UE) 2016/679 (RGPD).",
+    legal_toc_1:"Aviso legal", legal_toc_2:"Redes sociales", legal_toc_3:"Protección de datos", legal_toc_4:"Cookies",
     footer_desc:"Trabajamos cada día por un Sant Cugat mejor, más seguro y próspero para todas las personas que viven en nuestra ciudad.",
     footer_h1:"Secciones", footer_h2:"Participa", footer_h3:"Contacto",
     footer_join:"Únete", footer_newsletter:"Newsletter",
@@ -124,7 +125,8 @@ const I18N = {
     contact_captcha_error:"La resposta de la comprovació anti-robots no és correcta.",
     contact_form_submit:"Enviar missatge",
     legal_eyebrow:"Legal", legal_title:"Termes d'ús i política de privacitat",
-    legal_intro:"[Contingut pendent. Aquí es publicarà el text legal complet: identitat del responsable del tractament, finalitat i legitimació del tractament de dades, termini de conservació, destinataris i cessions, i el procediment per exercir els drets d'accés, rectificació, supressió, oposició, limitació i portabilitat, d'acord amb l'article 13 del Reglament (UE) 2016/679 (RGPD) i la LOPDGDD.]",
+    legal_intro:"Aquest document recull l'avís legal, la política de privacitat i la política de cookies del Partit Popular de Sant Cugat, d'acord amb la Llei 34/2002 (LSSICE) i el Reglament (UE) 2016/679 (RGPD).",
+    legal_toc_1:"Avís legal", legal_toc_2:"Xarxes socials", legal_toc_3:"Protecció de dades", legal_toc_4:"Cookies",
     footer_desc:"Treballem cada dia per un Sant Cugat millor, més segur i pròsper per a totes les persones que viuen a la nostra ciutat.",
     footer_h1:"Seccions", footer_h2:"Participa", footer_h3:"Contacte",
     footer_join:"Uneix-te", footer_newsletter:"Newsletter",
@@ -138,9 +140,318 @@ const HTML_KEYS = {
   join_title: { es:'Sant Cugat lo cambiamos <span class="accent" style="color:var(--pp-blue);">entre todos</span>.', ca:'Sant Cugat el canviem <span class="accent" style="color:var(--pp-blue);">entre tots</span>.' },
   footer_copy: { es:'© 2026 PP Sant Cugat. Todos los derechos reservados.', ca:'© 2026 PP Sant Cugat. Tots els drets reservats.' },
   contact_terms_label: {
-    es:'He leído y acepto los <a href="privacidad.html" target="_blank" rel="noopener">términos de uso y la política de privacidad</a>, conforme al artículo 13 del RGPD.',
-    ca:'He llegit i accepto els <a href="privacidad.html" target="_blank" rel="noopener">termes d\'ús i la política de privacitat</a>, d\'acord amb l\'article 13 del RGPD.'
+    es:'He leído y acepto los <a href="privacidad.html" target="_blank" rel="noopener">términos de uso y la política de privacidad</a>, conforme al <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2016.119.01.0001.01.ENG&toc=OJ:L:2016:119:TOC" target="_blank" rel="noopener">artículo 13 del RGPD</a>.',
+    ca:'He llegit i accepto els <a href="privacidad.html" target="_blank" rel="noopener">termes d\'ús i la política de privacitat</a>, d\'acord amb l\'<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=uriserv:OJ.L_.2016.119.01.0001.01.ENG&toc=OJ:L:2016:119:TOC" target="_blank" rel="noopener">article 13 del RGPD</a>.'
+  },
+  legal_aviso_html: {
+    es:`<h2>Aviso legal</h2>
+<h3>Ley de los Servicios de la Sociedad de la Información (LSSI)</h3>
+<p>Partido Popular de Sant Cugat, responsable del sitio web, en adelante RESPONSABLE, pone a disposición de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), BOE Nº 166, así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso. Toda persona que acceda a este sitio web asume el papel de usuario, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier otra disposición legal que fuera de aplicación. Partido Popular de Sant Cugat se reserva el derecho de modificar cualquier tipo de información que pudiera aparecer en el sitio web, sin que exista obligación de preavisar o poner en conocimiento de los usuarios dichas obligaciones, entendiéndose como suficiente con la publicación en el sitio web de Partido Popular de Sant Cugat.</p>
+
+<h3>1. Datos identificativos</h3>
+<ul class="legal-meta">
+  <li><strong>Nombre de dominio:</strong> https://www.ppsantcugat.es</li>
+  <li><strong>Nombre comercial:</strong> Partido Popular de Sant Cugat</li>
+  <li><strong>Denominación social:</strong> Partido Popular de Sant Cugat</li>
+  <li><strong>NIF:</strong> —</li>
+  <li><strong>Domicilio social:</strong> Urgell 249 - Barcelona</li>
+  <li><strong>Teléfono:</strong> 933 65 40 00</li>
+  <li><strong>E-mail:</strong> <a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a></li>
+</ul>
+
+<h3>2. Derechos de propiedad intelectual e industrial</h3>
+<p>El sitio web, incluyendo a título enunciativo pero no limitativo su programación, edición, compilación y demás elementos necesarios para su funcionamiento, los diseños, logotipos, texto y/o gráficos, son propiedad del RESPONSABLE o, si es el caso, dispone de licencia o autorización expresa por parte de los autores. Todos los contenidos del sitio web se encuentran debidamente protegidos por la normativa de propiedad intelectual e industrial, así como inscritos en los registros públicos correspondientes. Independientemente de la finalidad para la que fueran destinados, la reproducción total o parcial, uso, explotación, distribución y comercialización, requiere en todo caso de la autorización escrita previa por parte del RESPONSABLE. Cualquier uso no autorizado previamente se considera un incumplimiento grave de los derechos de propiedad intelectual o industrial del autor.</p>
+<p>Los diseños, logotipos, texto y/o gráficos ajenos al RESPONSABLE y que pudieran aparecer en el sitio web, pertenecen a sus respectivos propietarios, siendo ellos mismos responsables de cualquier posible controversia que pudiera suscitarse respecto a los mismos. El RESPONSABLE autoriza expresamente a que terceros puedan redirigir directamente a los contenidos concretos del sitio web, y en todo caso redirigir al sitio web principal de <a href="https://www.ppsantcugat.es" target="_blank" rel="noopener">https://www.ppsantcugat.es</a>.</p>
+<p>El RESPONSABLE reconoce a favor de sus titulares los correspondientes derechos de propiedad intelectual e industrial, no implicando su sola mención o aparición en el sitio web la existencia de derechos o responsabilidad alguna sobre los mismos, como tampoco respaldo, patrocinio o recomendación por parte del mismo. Para realizar cualquier tipo de observación respecto a posibles incumplimientos de los derechos de propiedad intelectual o industrial, así como sobre cualquiera de los contenidos del sitio web, puede hacerlo a través del correo electrónico <a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a>.</p>
+
+<h3>3. Exención de responsabilidades</h3>
+<p>El RESPONSABLE se exime de cualquier tipo de responsabilidad derivada de la información publicada en su sitio web siempre que esta información haya sido manipulada o introducida por un tercero ajeno al mismo.</p>
+<p><strong>Uso de Cookies.</strong> Este sitio web puede utilizar cookies técnicas (pequeños archivos de información que el servidor envía al ordenador de quien accede a la página) para llevar a cabo determinadas funciones que son consideradas imprescindibles para el correcto funcionamiento y visualización del sitio. Las cookies utilizadas tienen, en todo caso, carácter temporal, con la única finalidad de hacer más eficaz la navegación, y desaparecen al terminar la sesión del usuario. En ningún caso, estas cookies proporcionan por sí mismas datos de carácter personal y no se utilizarán para la recogida de los mismos. Mediante el uso de cookies también es posible que el servidor donde se encuentra la web reconozca el navegador utilizado por el usuario con la finalidad de que la navegación sea más sencilla, permitiendo, por ejemplo, el acceso de los usuarios que se hayan registrado previamente a las áreas, servicios, promociones o concursos reservados exclusivamente a ellos sin tener que registrarse en cada visita. También se pueden utilizar para medir la audiencia, parámetros de tráfico, controlar el progreso y número de entradas, etc., siendo en estos casos cookies prescindibles técnicamente pero beneficiosas para el usuario. Este sitio web no instalará cookies prescindibles sin el consentimiento previo del usuario. El usuario tiene la posibilidad de configurar su navegador para ser alertado de la recepción de cookies y para impedir su instalación en su equipo. Por favor, consulte las instrucciones de su navegador para ampliar esta información.</p>
+<p><strong>Política de enlaces.</strong> Desde el sitio web, es posible que se redirija a contenidos de terceros sitios web. Dado que el RESPONSABLE no puede controlar siempre los contenidos introducidos por los terceros en sus respectivos sitios web, no asume ningún tipo de responsabilidad respecto a dichos contenidos. En todo caso, procederá a la retirada inmediata de cualquier contenido que pudiera contravenir la legislación nacional o internacional, la moral o el orden público, procediendo a la retirada inmediata de la redirección a dicho sitio web, poniendo en conocimiento de las autoridades competentes el contenido en cuestión. El RESPONSABLE no se hace responsable de la información y contenidos almacenados, a título enunciativo pero no limitativo, en foros, chats, generadores de blogs, comentarios, redes sociales o cualquier otro medio que permita a terceros publicar contenidos de forma independiente en la página web del RESPONSABLE. Sin embargo, y en cumplimiento de lo dispuesto en los artículos 11 y 16 de la LSSICE, Partido Popular de Sant Cugat se pone a disposición de todos los usuarios, autoridades y fuerzas de seguridad, colaborando de forma activa en la retirada o, en su caso, bloqueo de todos aquellos contenidos que puedan afectar o contravenir la legislación nacional o internacional, los derechos de terceros o la moral y el orden público. En caso de que el usuario considere que existe en el sitio web algún contenido que pudiera ser susceptible de esta clasificación, se ruega lo notifique de forma inmediata al administrador del sitio web. Este sitio web ha sido revisado y probado para que funcione correctamente. En principio, puede garantizarse el correcto funcionamiento los 365 días del año, 24 horas al día. Sin embargo, el RESPONSABLE no descarta la posibilidad de que existan ciertos errores de programación, o que acontezcan causas de fuerza mayor, catástrofes naturales, huelgas o circunstancias semejantes que hagan imposible el acceso a la página web.</p>
+<p><strong>Direcciones IP.</strong> Los servidores del sitio web podrán detectar de manera automática la dirección IP y el nombre de dominio utilizados por el usuario. Una dirección IP es un número asignado automáticamente a un ordenador cuando éste se conecta a Internet. Toda esta información es registrada en un fichero de actividad del servidor debidamente inscrito que permite el posterior procesamiento de los datos con el fin de obtener mediciones únicamente estadísticas que permitan conocer el número de impresiones de páginas, el número de visitas realizadas a los servidores web, el orden de visitas, el punto de acceso, etc.</p>
+
+<h3>4. Ley aplicable y jurisdicción</h3>
+<p>Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales de Barcelona.</p>`,
+    ca:`<h2>Avís legal</h2>
+<h3>Llei dels Serveis de la Societat de la Informació (LSSI)</h3>
+<p>El Partit Popular de Sant Cugat, responsable del lloc web, d'ara endavant RESPONSABLE, posa a disposició dels usuaris aquest document, amb el qual pretén donar compliment a les obligacions disposades a la Llei 34/2002, d'11 de juliol, de Serveis de la Societat de la Informació i de Comerç Electrònic (LSSICE), BOE núm. 166, així com informar tots els usuaris del lloc web respecte a quines són les condicions d'ús. Tota persona que accedeixi a aquest lloc web assumeix el paper d'usuari, i es compromet a l'observança i el compliment rigorós de les disposicions aquí disposades, així com de qualsevol altra disposició legal que en sigui d'aplicació. El Partit Popular de Sant Cugat es reserva el dret de modificar qualsevol tipus d'informació que pugui aparèixer al lloc web, sense que existeixi obligació de preavisar o posar en coneixement dels usuaris aquestes obligacions, entenent-se com a suficient la publicació al lloc web del Partit Popular de Sant Cugat.</p>
+
+<h3>1. Dades identificatives</h3>
+<ul class="legal-meta">
+  <li><strong>Nom de domini:</strong> https://www.ppsantcugat.es</li>
+  <li><strong>Nom comercial:</strong> Partit Popular de Sant Cugat</li>
+  <li><strong>Denominació social:</strong> Partit Popular de Sant Cugat</li>
+  <li><strong>NIF:</strong> —</li>
+  <li><strong>Domicili social:</strong> Urgell 249 - Barcelona</li>
+  <li><strong>Telèfon:</strong> 933 65 40 00</li>
+  <li><strong>Correu electrònic:</strong> <a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a></li>
+</ul>
+
+<h3>2. Drets de propietat intel·lectual i industrial</h3>
+<p>El lloc web, incloent-hi a títol enunciatiu però no limitatiu la seva programació, edició, compilació i altres elements necessaris per al seu funcionament, els dissenys, logotips, textos i/o gràfics, són propietat del RESPONSABLE o, si escau, disposa de llicència o autorització expressa per part dels autors. Tots els continguts del lloc web es troben degudament protegits per la normativa de propietat intel·lectual i industrial, així com inscrits en els registres públics corresponents. Independentment de la finalitat per a la qual fossin destinats, la reproducció total o parcial, ús, explotació, distribució i comercialització, requereix en tot cas de l'autorització escrita prèvia per part del RESPONSABLE. Qualsevol ús no autoritzat prèviament es considera un incompliment greu dels drets de propietat intel·lectual o industrial de l'autor.</p>
+<p>Els dissenys, logotips, textos i/o gràfics aliens al RESPONSABLE i que puguin aparèixer al lloc web, pertanyen als seus respectius propietaris, que en són responsables de qualsevol possible controvèrsia que se'n pugui derivar. El RESPONSABLE autoritza expressament que tercers puguin redirigir directament als continguts concrets del lloc web, i en tot cas redirigir al lloc web principal <a href="https://www.ppsantcugat.es" target="_blank" rel="noopener">https://www.ppsantcugat.es</a>.</p>
+<p>El RESPONSABLE reconeix a favor dels seus titulars els corresponents drets de propietat intel·lectual i industrial, sense que la simple menció o aparició al lloc web impliqui l'existència de drets o cap responsabilitat sobre aquests, ni tampoc suport, patrocini o recomanació per part seva. Per fer qualsevol observació respecte a possibles incompliments dels drets de propietat intel·lectual o industrial, així com sobre qualsevol dels continguts del lloc web, es pot fer a través del correu electrònic <a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a>.</p>
+
+<h3>3. Exempció de responsabilitats</h3>
+<p>El RESPONSABLE s'eximeix de qualsevol tipus de responsabilitat derivada de la informació publicada al seu lloc web sempre que aquesta informació hagi estat manipulada o introduïda per un tercer aliè al mateix.</p>
+<p><strong>Ús de cookies.</strong> Aquest lloc web pot utilitzar cookies tècniques (petits arxius d'informació que el servidor envia a l'ordinador de qui accedeix a la pàgina) per dur a terme determinades funcions que es consideren imprescindibles per al correcte funcionament i visualització del lloc. Les cookies utilitzades tenen, en tot cas, caràcter temporal, amb l'única finalitat de fer més eficaç la navegació, i desapareixen en finalitzar la sessió de l'usuari. En cap cas, aquestes cookies proporcionen per si mateixes dades de caràcter personal i no s'utilitzaran per a la recollida d'aquestes. Mitjançant l'ús de cookies també és possible que el servidor on es troba el web reconegui el navegador utilitzat per l'usuari amb la finalitat que la navegació sigui més senzilla, permetent, per exemple, l'accés dels usuaris que s'hagin registrat prèviament a les àrees, serveis, promocions o concursos reservats exclusivament a ells sense haver-se de registrar a cada visita. També es poden utilitzar per mesurar l'audiència, paràmetres de trànsit, controlar el progrés i nombre d'entrades, etc., sent en aquests casos cookies prescindibles tècnicament però beneficioses per a l'usuari. Aquest lloc web no instal·larà cookies prescindibles sense el consentiment previ de l'usuari. L'usuari té la possibilitat de configurar el seu navegador per ser alertat de la recepció de cookies i per impedir-ne la instal·lació al seu equip. Si us plau, consulti les instruccions del seu navegador per ampliar aquesta informació.</p>
+<p><strong>Política d'enllaços.</strong> Des del lloc web, és possible que es redirigeixi a continguts de tercers llocs web. Atès que el RESPONSABLE no pot controlar sempre els continguts introduïts pels tercers als seus respectius llocs web, no assumeix cap tipus de responsabilitat respecte d'aquests continguts. En tot cas, procedirà a la retirada immediata de qualsevol contingut que pogués contravenir la legislació nacional o internacional, la moral o l'ordre públic, procedint a la retirada immediata de la redirecció a aquest lloc web, posant en coneixement de les autoritats competents el contingut en qüestió. El RESPONSABLE no es fa responsable de la informació i continguts emmagatzemats, a títol enunciatiu però no limitatiu, en fòrums, xats, generadors de blogs, comentaris, xarxes socials o qualsevol altre mitjà que permeti a tercers publicar continguts de manera independent a la pàgina web del RESPONSABLE. No obstant això, i en compliment del que disposen els articles 11 i 16 de la LSSICE, el Partit Popular de Sant Cugat es posa a disposició de tots els usuaris, autoritats i forces de seguretat, col·laborant de forma activa en la retirada o, si escau, bloqueig de tots aquells continguts que puguin afectar o contravenir la legislació nacional o internacional, els drets de tercers o la moral i l'ordre públic. En cas que l'usuari consideri que hi ha al lloc web algun contingut que pogués ser susceptible d'aquesta classificació, es prega que ho notifiqui de manera immediata a l'administrador del lloc web. Aquest lloc web ha estat revisat i provat perquè funcioni correctament. En principi, es pot garantir el funcionament correcte els 365 dies de l'any, 24 hores al dia. No obstant això, el RESPONSABLE no descarta la possibilitat que hi hagi certs errors de programació, o que esdevinguin causes de força major, catàstrofes naturals, vagues o circumstàncies semblants que facin impossible l'accés a la pàgina web.</p>
+<p><strong>Adreces IP.</strong> Els servidors del lloc web podran detectar de manera automàtica l'adreça IP i el nom de domini utilitzats per l'usuari. Una adreça IP és un número assignat automàticament a un ordinador quan aquest es connecta a Internet. Tota aquesta informació es registra en un fitxer d'activitat del servidor degudament inscrit que permet el posterior processament de les dades amb la finalitat d'obtenir mesuraments únicament estadístics que permetin conèixer el nombre d'impressions de pàgines, el nombre de visites realitzades als servidors web, l'ordre de visites, el punt d'accés, etc.</p>
+
+<h3>4. Llei aplicable i jurisdicció</h3>
+<p>Per a la resolució de totes les controvèrsies o qüestions relacionades amb aquest lloc web o de les activitats desenvolupades, serà d'aplicació la legislació espanyola, a la qual se sotmeten expressament les parts, sent competents per a la resolució de tots els conflictes derivats o relacionats amb el seu ús els Jutjats i Tribunals de Barcelona.</p>`
+  },
+  legal_redes_html: {
+    es:`<h2>Política de privacidad redes sociales</h2>
+<h3>1. Información sobre el responsable del tratamiento de los datos alojados en la página oficial de Partido Popular de Sant Cugat en las redes sociales</h3>
+<p>De conformidad al deber de información establecido en el Reglamento (UE) 2016/679 de 27 de abril (GDPR), Partido Popular de Sant Cugat, en adelante El Responsable, desea poner en conocimiento de los usuarios de esta red social la política respecto del tratamiento y protección de los datos de carácter personal de aquellas personas que voluntariamente acceden y utilizan la página oficial de EL RESPONSABLE en la misma. El acceso y uso por el usuario de esta página oficial de EL RESPONSABLE supone que acepta expresamente esta política de privacidad y que presta su consentimiento para el tratamiento de sus datos personales según lo previsto en la misma.</p>
+
+<h3>2. Datos de menores de edad o incapaces</h3>
+<p>El acceso y registro en esta red social está prohibido a los menores de catorce (14) años, de forma que igualmente queda prohibido el acceso y uso de los menores de catorce (14) años a la página oficial de EL RESPONSABLE en la misma. Por su parte, si el usuario es incapaz, EL RESPONSABLE advierte que será necesaria la asistencia consentida del titular de la patria potestad o tutela del usuario o su representante legal para el acceso y uso de esta página oficial de EL RESPONSABLE. EL RESPONSABLE quedará expresamente exonerada de cualquier responsabilidad que pudiera derivarse del uso de su página oficial por menores e incapaces, siendo dicha responsabilidad de sus representantes legales en cada caso.</p>
+
+<h3>3. Identificación de la razón social del responsable del fichero</h3>
+<p>El usuario queda informado de que EL RESPONSABLE, con domicilio social en Urgell 249 - Barcelona (Barcelona), ostenta la condición de responsable de los ficheros y tratamientos a través de los que se recogen y almacenan los datos personales del usuario como consecuencia del registro y uso de la página oficial de EL RESPONSABLE en esta red social, sin perjuicio de los tratamientos de los que es responsable la entidad titular de la red social en la que se encuentra nuestra página oficial.</p>
+
+<h3>4. Finalidades a que se destinan los datos de carácter personal, información y consentimiento</h3>
+<p>Los datos personales proporcionados voluntariamente por el usuario a EL RESPONSABLE a través de su página oficial formarán parte de un tratamiento de datos responsabilidad de EL RESPONSABLE, con la finalidad de ofrecerle información de EL RESPONSABLE por e-mail, fax, SMS, MMS, comunidades sociales o cualesquier otro medio electrónico o físico, presente o futuro, que posibilite realizar comunicación comerciales, envío de newsletter a aquellos usuarios que se suscriban, intercambiar información con EL RESPONSABLE y otros usuarios y establecer comunicación con terceros.</p>
+<p>Desde el momento en que el usuario utiliza la presente página oficial presta su consentimiento libre, inequívoco, específico, informado y expreso para el tratamiento de sus datos personales por EL RESPONSABLE, para la correcta prestación de dichos servicios de acuerdo con lo establecido en la presente política. El usuario es libre de utilizar la página oficial de EL RESPONSABLE en esta red social, por lo que en caso en que el usuario no esté de acuerdo con el tratamiento de sus datos con dichos fines, no deberá utilizarla ni proporcionar sus datos personales.</p>
+<p>A través de esta página oficial de EL RESPONSABLE, el usuario puede compartir textos, fotos, vídeos y otro tipo de información y/o contenidos que estarán sujetos tanto a la presente política como a las Normas y Condiciones de la Plataforma. El usuario será responsable de que todos los contenidos que publique respeten la legislación vigente, la presente política y las Normas de la Plataforma. El usuario únicamente podrá publicar en esta página oficial de EL RESPONSABLE datos personales, fotografías e informaciones u otros contenidos cuya titularidad y propiedad le pertenezcan o respecto de las cuales ostente la autorización de terceros.</p>
+<p>EL RESPONSABLE tendrá derecho a eliminar de la presente página oficial —de forma unilateral y sin previa comunicación ni autorización del usuario— cualesquiera contenidos publicados por el usuario cuando el usuario infrinja o vulnere la legislación vigente, las normas establecidas en la presente política y las Normas de la Plataforma.</p>
+
+<h3>5. Identificación de los destinatarios</h3>
+<p>Se advierte al usuario que toda la información y contenidos que publique en la página oficial de EL RESPONSABLE en la red social podrá ser conocida por los restantes usuarios de la página oficial y de la plataforma de red social. En consecuencia, toda la información y contenidos publicados por el usuario en la página oficial de EL RESPONSABLE en esta red social será objeto de comunicación al resto de los usuarios por la propia naturaleza del servicio. EL RESPONSABLE únicamente tiene prevista la realización de cesiones o comunicaciones de datos que en razón de la normativa vigente deba realizar a jueces, tribunales, administraciones públicas y autoridades competentes de carácter administrativo.</p>
+
+<h3>6. Otros terceros prestadores de servicios</h3>
+<p>EL RESPONSABLE advierte al usuario de que esta entidad sólo es responsable y garantiza la confidencialidad, seguridad y tratamiento de los datos conforme a la presente política, respecto de los datos de carácter personal que recoja del usuario a través de la presente página oficial en esta red social, no teniendo ningún tipo de responsabilidad respecto de los tratamientos y posteriores utilizaciones de los datos personales que pudieran efectuarse tanto por el titular de la red social como por terceros prestadores de servicios de la sociedad de la información que pudiesen acceder a tales datos en razón de la prestación de sus servicios o ejercicio de su actividad, terceros que establezcan hiperenlaces a la red social, ni de aquellos responsables a quienes a través de hiperenlaces EL RESPONSABLE remite a los usuarios adheridos a la presente página oficial.</p>
+
+<h3>7. Calidad de los datos</h3>
+<p>EL RESPONSABLE advierte al usuario de que, salvo la existencia de una representación legalmente constituida, ningún usuario puede utilizar la identidad de otra persona y comunicar sus datos personales, por lo que el usuario en todo momento deberá tener en cuenta que solo puede proporcionar datos personales correspondientes a su propia identidad y que sean adecuados, pertinentes, actuales, exactos y verdaderos. En cualquier caso, el usuario deberá respetar la privacidad de terceros, sean éstos usuarios o no de la red social o de la página oficial de EL RESPONSABLE en la misma.</p>
+
+<h3>8. Derechos que asisten al Interesado</h3>
+<ul>
+  <li>Derecho a retirar el consentimiento en cualquier momento.</li>
+  <li>Derecho de acceso, rectificación, portabilidad y supresión de sus datos y a la limitación u oposición a su tratamiento.</li>
+  <li>Derecho a presentar una reclamación ante la Autoridad de control (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>) si considera que el tratamiento no se ajusta a la normativa vigente.</li>
+</ul>
+
+<h3>9. Otra información de interés</h3>
+<p>EL RESPONSABLE podrá modificar y/o sustituir en cualquier momento la presente política que, según los casos, sustituirá, completará y/o modificará la actualmente publicada aquí recogida. Por ello el usuario deberá acceder periódicamente a las mismas con el fin de mantenerse actualizado.</p>
+<p>El usuario puede contactar con EL RESPONSABLE mediante el servicio de mensajería interna de la red social o a través de las siguientes direcciones y datos de contacto:</p>
+<ul class="legal-meta">
+  <li>Partido Popular de Sant Cugat</li>
+  <li>Urgell 249 - Barcelona</li>
+  <li><a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a></li>
+</ul>
+<p>Asimismo el usuario puede consultar las normas y políticas publicadas por el titular de la red social para el uso de la misma.</p>`,
+    ca:`<h2>Política de privacitat a les xarxes socials</h2>
+<h3>1. Informació sobre el responsable del tractament de les dades allotjades a la pàgina oficial del Partit Popular de Sant Cugat a les xarxes socials</h3>
+<p>De conformitat amb el deure d'informació establert al Reglament (UE) 2016/679 de 27 d'abril (GDPR), el Partit Popular de Sant Cugat, d'ara endavant El Responsable, desitja posar en coneixement dels usuaris d'aquesta xarxa social la política respecte del tractament i protecció de les dades de caràcter personal d'aquelles persones que voluntàriament accedeixen i utilitzen la pàgina oficial d'EL RESPONSABLE en la mateixa. L'accés i ús per part de l'usuari d'aquesta pàgina oficial d'EL RESPONSABLE suposa que accepta expressament aquesta política de privacitat i que presta el seu consentiment per al tractament de les seves dades personals segons el que s'hi preveu.</p>
+
+<h3>2. Dades de menors d'edat o incapaços</h3>
+<p>L'accés i registre en aquesta xarxa social està prohibit als menors de catorze (14) anys, de manera que igualment queda prohibit l'accés i ús dels menors de catorze (14) anys a la pàgina oficial d'EL RESPONSABLE en la mateixa. Per la seva banda, si l'usuari és incapaç, EL RESPONSABLE adverteix que caldrà l'assistència consentida del titular de la pàtria potestat o tutela de l'usuari o el seu representant legal per a l'accés i ús d'aquesta pàgina oficial d'EL RESPONSABLE. EL RESPONSABLE quedarà expressament exonerat de qualsevol responsabilitat que pogués derivar-se de l'ús de la seva pàgina oficial per menors i incapaços, sent aquesta responsabilitat dels seus representants legals en cada cas.</p>
+
+<h3>3. Identificació de la raó social del responsable del fitxer</h3>
+<p>L'usuari queda informat que EL RESPONSABLE, amb domicili social a Urgell 249 - Barcelona (Barcelona), ostenta la condició de responsable dels fitxers i tractaments a través dels quals es recullen i emmagatzemen les dades personals de l'usuari com a conseqüència del registre i ús de la pàgina oficial d'EL RESPONSABLE en aquesta xarxa social, sense perjudici dels tractaments dels quals és responsable l'entitat titular de la xarxa social en la qual es troba la nostra pàgina oficial.</p>
+
+<h3>4. Finalitats a què es destinen les dades de caràcter personal, informació i consentiment</h3>
+<p>Les dades personals proporcionades voluntàriament per l'usuari a EL RESPONSABLE a través de la seva pàgina oficial formaran part d'un tractament de dades responsabilitat d'EL RESPONSABLE, amb la finalitat d'oferir-li informació d'EL RESPONSABLE per correu electrònic, fax, SMS, MMS, comunitats socials o qualsevol altre mitjà electrònic o físic, present o futur, que possibiliti realitzar comunicacions comercials, enviament de newsletter a aquells usuaris que s'hi subscriguin, intercanviar informació amb EL RESPONSABLE i altres usuaris i establir comunicació amb tercers.</p>
+<p>Des del moment en què l'usuari utilitza aquesta pàgina oficial presta el seu consentiment lliure, inequívoc, específic, informat i exprés per al tractament de les seves dades personals per part d'EL RESPONSABLE, per a la correcta prestació d'aquests serveis d'acord amb el que estableix aquesta política. L'usuari és lliure d'utilitzar la pàgina oficial d'EL RESPONSABLE en aquesta xarxa social, de manera que en cas que l'usuari no estigui d'acord amb el tractament de les seves dades amb aquestes finalitats, no l'haurà d'utilitzar ni proporcionar-hi les seves dades personals.</p>
+<p>A través d'aquesta pàgina oficial d'EL RESPONSABLE, l'usuari pot compartir textos, fotos, vídeos i altres tipus d'informació i/o continguts que estaran subjectes tant a aquesta política com a les Normes i Condicions de la Plataforma. L'usuari serà responsable que tots els continguts que publiqui respectin la legislació vigent, aquesta política i les Normes de la Plataforma. L'usuari únicament podrà publicar en aquesta pàgina oficial d'EL RESPONSABLE dades personals, fotografies i informacions o altres continguts la titularitat i propietat dels quals li pertanyin o respecte dels quals ostenti l'autorització de tercers.</p>
+<p>EL RESPONSABLE tindrà dret a eliminar de la present pàgina oficial —de forma unilateral i sense comunicació ni autorització prèvia de l'usuari— qualssevol continguts publicats per l'usuari quan aquest infringeixi o vulneri la legislació vigent, les normes establertes en aquesta política i les Normes de la Plataforma.</p>
+
+<h3>5. Identificació dels destinataris</h3>
+<p>S'adverteix a l'usuari que tota la informació i continguts que publiqui a la pàgina oficial d'EL RESPONSABLE a la xarxa social podrà ser coneguda per la resta d'usuaris de la pàgina oficial i de la plataforma de xarxa social. En conseqüència, tota la informació i continguts publicats per l'usuari a la pàgina oficial d'EL RESPONSABLE en aquesta xarxa social serà objecte de comunicació a la resta dels usuaris per la mateixa naturalesa del servei. EL RESPONSABLE únicament té prevista la realització de cessions o comunicacions de dades que, en raó de la normativa vigent, hagi de fer a jutges, tribunals, administracions públiques i autoritats competents de caràcter administratiu.</p>
+
+<h3>6. Altres tercers prestadors de serveis</h3>
+<p>EL RESPONSABLE adverteix a l'usuari que aquesta entitat només és responsable i garanteix la confidencialitat, seguretat i tractament de les dades conforme a aquesta política, respecte de les dades de caràcter personal que reculli de l'usuari a través d'aquesta pàgina oficial en aquesta xarxa social, no tenint cap tipus de responsabilitat respecte dels tractaments i utilitzacions posteriors de les dades personals que poguessin efectuar-se tant pel titular de la xarxa social com per tercers prestadors de serveis de la societat de la informació que poguessin accedir a aquestes dades en raó de la prestació dels seus serveis o exercici de la seva activitat, tercers que estableixin hiperenllaços a la xarxa social, ni d'aquells responsables als quals, a través d'hiperenllaços, EL RESPONSABLE remet els usuaris adherits a aquesta pàgina oficial.</p>
+
+<h3>7. Qualitat de les dades</h3>
+<p>EL RESPONSABLE adverteix a l'usuari que, llevat de l'existència d'una representació legalment constituïda, cap usuari pot utilitzar la identitat d'una altra persona i comunicar les seves dades personals, per la qual cosa l'usuari en tot moment haurà de tenir en compte que només pot proporcionar dades personals corresponents a la seva pròpia identitat i que siguin adequades, pertinents, actuals, exactes i vertaderes. En qualsevol cas, l'usuari haurà de respectar la privadesa de tercers, siguin aquests usuaris o no de la xarxa social o de la pàgina oficial d'EL RESPONSABLE en la mateixa.</p>
+
+<h3>8. Drets que assisteixen a l'interessat</h3>
+<ul>
+  <li>Dret a retirar el consentiment en qualsevol moment.</li>
+  <li>Dret d'accés, rectificació, portabilitat i supressió de les seves dades i a la limitació o oposició al seu tractament.</li>
+  <li>Dret a presentar una reclamació davant l'Autoritat de control (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>) si considera que el tractament no s'ajusta a la normativa vigent.</li>
+</ul>
+
+<h3>9. Altra informació d'interès</h3>
+<p>EL RESPONSABLE podrà modificar i/o substituir en qualsevol moment aquesta política que, segons els casos, substituirà, completarà i/o modificarà l'actualment publicada aquí recollida. Per això l'usuari haurà d'accedir periòdicament a aquestes amb la finalitat de mantenir-se actualitzat.</p>
+<p>L'usuari pot contactar amb EL RESPONSABLE mitjançant el servei de missatgeria interna de la xarxa social o a través de les següents adreces i dades de contacte:</p>
+<ul class="legal-meta">
+  <li>Partit Popular de Sant Cugat</li>
+  <li>Urgell 249 - Barcelona</li>
+  <li><a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a></li>
+</ul>
+<p>Així mateix, l'usuari pot consultar les normes i polítiques publicades pel titular de la xarxa social per a l'ús de la mateixa.</p>`
+  },
+  legal_datos_html: {
+    es:`<h2>Política de privacidad de datos</h2>
+<h3>1. Información al usuario</h3>
+<p>Partido Popular de Sant Cugat, en adelante RESPONSABLE, es el Responsable del tratamiento de los datos personales del Usuario y le informa que estos datos serán tratados de conformidad con lo dispuesto en las normativas vigentes en protección de datos personales, el Reglamento (UE) 2016/679 de 27 de abril de 2016 (GDPR) relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos, por lo que se le facilita la siguiente información del tratamiento:</p>
+<p><strong>Fin del tratamiento:</strong> mantener una relación comercial con el Usuario. Las operaciones previstas para realizar el tratamiento son:</p>
+<ul>
+  <li>Remisión de comunicaciones comerciales publicitarias por email, fax, SMS, MMS, comunidades sociales o cualquier otro medio electrónico o físico, presente o futuro, que posibilite realizar comunicaciones comerciales, siempre y cuando haya sido autorizadas previamente. Estas comunicaciones serán realizadas por el RESPONSABLE y relacionadas sobre sus productos y servicios, o de sus colaboradores o proveedores con los que éste haya alcanzado algún acuerdo de promoción. En este caso, los terceros nunca tendrán acceso a los datos personales.</li>
+  <li>Realizar estudios estadísticos.</li>
+  <li>Tramitar encargos, solicitudes o cualquier tipo de petición que sea realizada por el usuario a través de cualquiera de las formas de contacto que se ponen a su disposición.</li>
+  <li>Remitir el boletín de noticias de la página web.</li>
+</ul>
+<p><strong>Criterios de conservación de los datos:</strong> se conservarán mientras exista un interés mutuo para mantener el fin del tratamiento y cuando ya no sea necesario para tal fin, se suprimirán con medidas de seguridad adecuadas para garantizar la seudonimización de los datos o la destrucción total de los mismos.</p>
+<p><strong>Comunicación de los datos:</strong> No se comunicarán los datos a terceros, salvo obligación legal.</p>
+<p><strong>Derechos que asisten al Usuario:</strong></p>
+<ul>
+  <li>Derecho a retirar el consentimiento en cualquier momento.</li>
+  <li>Derecho de acceso, rectificación, portabilidad y supresión de sus datos y a la limitación u oposición a su tratamiento.</li>
+  <li>Derecho a presentar una reclamación ante la autoridad de control (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>) si considera que el tratamiento no se ajusta a la normativa vigente.</li>
+</ul>
+<p><strong>Datos de contacto para ejercer sus derechos:</strong></p>
+<ul class="legal-meta">
+  <li>Partido Popular de Sant Cugat</li>
+  <li>Dirección postal: Urgell 249 - Barcelona (Barcelona)</li>
+  <li>Correo electrónico: <a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a></li>
+</ul>
+
+<h3>2. Carácter obligatorio o facultativo de la información facilitada por el usuario</h3>
+<p>Los Usuarios, mediante la marcación de las casillas correspondientes y entrada de datos en los campos, marcados con un asterisco (*) en el formulario de contacto o presentados en formularios de descarga, aceptan expresamente y de forma libre e inequívoca, que sus datos son necesarios para atender su petición, por parte del prestador, siendo voluntaria la inclusión de datos en los campos restantes. El Usuario garantiza que los datos personales facilitados al RESPONSABLE son veraces y se hace responsable de comunicar cualquier modificación de los mismos.</p>
+<p>El RESPONSABLE informa y garantiza expresamente a los usuarios que sus datos personales no serán cedidos en ningún caso a terceros, y que siempre que realizara algún tipo de cesión de datos personales, se pedirá previamente el consentimiento expreso, informado e inequívoco por parte los Usuarios. Todos los datos solicitados a través del sitio web son obligatorios, ya que son necesarios para la prestación de un servicio óptimo al Usuario. En caso de que no sean facilitados todos los datos, no se garantiza que la información y servicios facilitados sean completamente ajustados a sus necesidades.</p>
+
+<h3>3. Medidas de seguridad</h3>
+<p>De conformidad con lo dispuesto en las normativas vigentes en protección de datos personales, el RESPONSABLE está cumpliendo con todas las disposiciones de las normativas GDPR para el tratamiento de los datos personales de su responsabilidad, y manifiestamente con los principios descritos en el artículo 5 del GDPR, por los cuales son tratados de manera lícita, leal y transparente en relación con el interesado y adecuados, pertinentes y limitados a lo necesario en relación con los fines para los que son tratados.</p>
+<p>El RESPONSABLE garantiza que ha implementado políticas técnicas y organizativas apropiadas para aplicar las medidas de seguridad que establecen el GDPR con el fin de proteger los derechos y libertades de los Usuarios y les ha comunicado la información adecuada para que puedan ejercerlos.</p>`,
+    ca:`<h2>Política de privacitat de dades</h2>
+<h3>1. Informació a l'usuari</h3>
+<p>El Partit Popular de Sant Cugat, d'ara endavant RESPONSABLE, és el Responsable del tractament de les dades personals de l'Usuari i l'informa que aquestes dades seran tractades de conformitat amb el que disposen les normatives vigents en protecció de dades personals, el Reglament (UE) 2016/679 de 27 d'abril de 2016 (GDPR) relatiu a la protecció de les persones físiques pel que fa al tractament de dades personals i a la lliure circulació d'aquestes dades, per la qual cosa se li facilita la següent informació del tractament:</p>
+<p><strong>Fi del tractament:</strong> mantenir una relació comercial amb l'Usuari. Les operacions previstes per realitzar el tractament són:</p>
+<ul>
+  <li>Remissió de comunicacions comercials publicitàries per email, fax, SMS, MMS, comunitats socials o qualsevol altre mitjà electrònic o físic, present o futur, que possibiliti realitzar comunicacions comercials, sempre que hagin estat autoritzades prèviament. Aquestes comunicacions seran realitzades pel RESPONSABLE i relacionades amb els seus productes i serveis, o dels seus col·laboradors o proveïdors amb els quals aquest hagi assolit algun acord de promoció. En aquest cas, els tercers mai no tindran accés a les dades personals.</li>
+  <li>Realitzar estudis estadístics.</li>
+  <li>Tramitar encàrrecs, sol·licituds o qualsevol tipus de petició que sigui realitzada per l'usuari a través de qualsevol de les formes de contacte que es posen a la seva disposició.</li>
+  <li>Remetre el butlletí de notícies de la pàgina web.</li>
+</ul>
+<p><strong>Criteris de conservació de les dades:</strong> es conservaran mentre existeixi un interès mutu per mantenir la finalitat del tractament i quan ja no sigui necessari per a aquesta finalitat, se suprimiran amb mesures de seguretat adequades per garantir la pseudonimització de les dades o la destrucció total d'aquestes.</p>
+<p><strong>Comunicació de les dades:</strong> No es comunicaran les dades a tercers, llevat d'obligació legal.</p>
+<p><strong>Drets que assisteixen a l'Usuari:</strong></p>
+<ul>
+  <li>Dret a retirar el consentiment en qualsevol moment.</li>
+  <li>Dret d'accés, rectificació, portabilitat i supressió de les seves dades i a la limitació o oposició al seu tractament.</li>
+  <li>Dret a presentar una reclamació davant l'autoritat de control (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>) si considera que el tractament no s'ajusta a la normativa vigent.</li>
+</ul>
+<p><strong>Dades de contacte per exercir els seus drets:</strong></p>
+<ul class="legal-meta">
+  <li>Partit Popular de Sant Cugat</li>
+  <li>Adreça postal: Urgell 249 - Barcelona (Barcelona)</li>
+  <li>Correu electrònic: <a href="mailto:ppsantcugatweb@gmail.com">ppsantcugatweb@gmail.com</a></li>
+</ul>
+
+<h3>2. Caràcter obligatori o facultatiu de la informació facilitada per l'usuari</h3>
+<p>Els Usuaris, mitjançant la marcació de les caselles corresponents i entrada de dades als camps, marcats amb un asterisc (*) al formulari de contacte o presentats en formularis de descàrrega, accepten expressament i de forma lliure i inequívoca, que les seves dades són necessàries per atendre la seva petició, per part del prestador, sent voluntària la inclusió de dades a la resta de camps. L'Usuari garanteix que les dades personals facilitades al RESPONSABLE són veraces i es fa responsable de comunicar qualsevol modificació d'aquestes.</p>
+<p>El RESPONSABLE informa i garanteix expressament als usuaris que les seves dades personals no seran cedides en cap cas a tercers, i que sempre que realitzés algun tipus de cessió de dades personals, es demanarà prèviament el consentiment exprés, informat i inequívoc per part dels Usuaris. Totes les dades sol·licitades a través del lloc web són obligatòries, ja que són necessàries per a la prestació d'un servei òptim a l'Usuari. En cas que no siguin facilitades totes les dades, no es garanteix que la informació i serveis facilitats siguin completament ajustats a les seves necessitats.</p>
+
+<h3>3. Mesures de seguretat</h3>
+<p>De conformitat amb el que disposen les normatives vigents en protecció de dades personals, el RESPONSABLE està complint amb totes les disposicions de les normatives GDPR per al tractament de les dades personals de la seva responsabilitat, i manifestament amb els principis descrits a l'article 5 del GDPR, pels quals són tractades de manera lícita, lleial i transparent en relació amb l'interessat i adequades, pertinents i limitades al que és necessari en relació amb les finalitats per a les quals són tractades.</p>
+<p>El RESPONSABLE garanteix que ha implementat polítiques tècniques i organitzatives apropiades per aplicar les mesures de seguretat que estableix el GDPR amb la finalitat de protegir els drets i llibertats dels Usuaris i els ha comunicat la informació adequada perquè puguin exercir-los.</p>`
+  },
+  legal_cookies_html: {
+    es:`<h2>Política de cookies</h2>
+<p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios, personalizar nuestro sitio web, facilitar la navegación de nuestros usuarios, proporcionarle una mejor experiencia en el uso del sitio web, identificar problemas para mejorar el mismo, hacer mediciones y estadísticas de uso y mostrarle publicidad relacionada con sus preferencias mediante el análisis del uso del sitio web.</p>
+<p>Le informamos de que podemos utilizar cookies en su equipo a condición de que el usuario haya dado su consentimiento, salvo en los supuestos en los que las cookies sean necesarias para la navegación por nuestro sitio web. En caso de que preste su consentimiento, podremos utilizar cookies que nos permitirán tener más información acerca de sus preferencias y personalizar nuestro sitio web de conformidad con sus intereses individuales.</p>
+
+<h3>¿Qué son las cookies?</h3>
+<p>Las cookies y otras tecnologías similares tales como local shared objects, flash cookies o píxeles, son herramientas empleadas por los servidores Web para almacenar y recuperar información acerca de sus visitantes, así como para ofrecer un correcto funcionamiento del sitio.</p>
+
+<h3>Tipos de cookies</h3>
+<p><strong>Tipos de cookies en función de la entidad que las gestione:</strong></p>
+<ul>
+  <li><strong>Cookies propias:</strong> son aquellas que se envían al equipo terminal del usuario desde un equipo o dominio gestionado por el titular de la página web y desde la que se presta el servicio solicitado por el usuario.</li>
+  <li><strong>Cookies de terceros:</strong> son aquéllas que se envían al equipo terminal del usuario desde un equipo o dominio que no es gestionado por el titular de la página web desde la que se presta el servicio solicitado por el usuario, sino por otra entidad que trata los datos obtenidos a través de las cookies. Asimismo, en el caso de que las cookies sean instaladas desde un equipo o dominio gestionado por el propio titular del sitio Web pero la información que se recoja mediante éstas sea gestionada por un tercero, también serán consideradas como cookies de terceros.</li>
+</ul>
+<p><strong>Tipos de cookies según la finalidad:</strong></p>
+<ul>
+  <li><strong>Cookies técnicas:</strong> son aquellas que permiten al usuario la navegación a través de una página web, plataforma o aplicación y la utilización de las diferentes opciones o servicios que en ella existan, incluyendo aquellas que el editor utiliza para permitir la gestión y operativa de la página web y habilitar sus funciones y servicios, como, por ejemplo, controlar el tráfico y la comunicación de datos, identificar la sesión, acceder a partes de acceso restringido, recordar los elementos que integran un pedido, realizar el proceso de compra de un pedido, gestionar el pago, controlar el fraude vinculado a la seguridad del servicio, realizar la solicitud de inscripción o participación en un evento, contar visitas a efectos de la facturación de licencias del software con el que funciona el servicio (sitio web, plataforma o aplicación), utilizar elementos de seguridad durante la navegación, almacenar contenidos para la difusión de vídeos o sonido, habilitar contenidos dinámicos (por ejemplo, animación de carga de un texto o imagen) o compartir contenidos a través de redes sociales. También pertenecen a esta categoría, por su naturaleza técnica, aquellas cookies que permiten la gestión, de la forma más eficaz posible, de los espacios publicitarios que, como un elemento más de diseño o «maquetación» del servicio ofrecido al usuario, el editor haya incluido en una página web, aplicación o plataforma en base a criterios como el contenido editado, sin que se recopile información de los usuarios con fines distintos, como puede ser personalizar ese contenido publicitario u otros contenidos.</li>
+  <li><strong>Cookies de preferencias o personalización:</strong> son aquellas que permiten recordar información para que el usuario acceda al servicio con determinadas características que pueden diferenciar su experiencia de la de otros usuarios, como, por ejemplo, el idioma, el número de resultados a mostrar cuando el usuario realiza una búsqueda, el aspecto o contenido del servicio en función del tipo de navegador a través del cual el usuario accede al servicio o de la región desde la que accede al servicio, etc.</li>
+  <li><strong>Cookies de análisis o medición:</strong> son aquellas que permiten al responsable de las mismas el seguimiento y análisis del comportamiento de los usuarios de los sitios web a los que están vinculadas, incluida la cuantificación de los impactos de los anuncios. La información recogida mediante este tipo de cookies se utiliza en la medición de la actividad de los sitios web, aplicación o plataforma, con el fin de introducir mejoras en función del análisis de los datos de uso que hacen los usuarios del servicio.</li>
+  <li><strong>Cookies de publicidad comportamental:</strong> son aquéllas que permiten la gestión, de la forma más eficaz posible, de los espacios publicitarios que hay en la página web. Estas cookies almacenan información del comportamiento de los usuarios obtenida a través de la observación continuada de sus hábitos de navegación, lo que permite desarrollar un perfil específico para mostrar publicidad en función del mismo.</li>
+  <li><strong>Cookies de geolocalización:</strong> se utilizan para saber en qué lugar se encuentra un usuario cuando solicita un servicio. Esta cookie es anónima y se usa, por ejemplo, para ofrecerle la información adecuada dependiendo del país en el que se encuentre.</li>
+</ul>
+<p><strong>Tipos de cookies según el plazo de tiempo que permanecen activadas:</strong></p>
+<ul>
+  <li><strong>Cookies de sesión:</strong> son aquellas diseñadas para recabar y almacenar datos mientras el usuario accede a una página web. Se suelen emplear para almacenar información que solo interesa conservar para la prestación del servicio solicitado por el usuario en una sola ocasión (por ejemplo, una lista de productos adquiridos) y desaparecen al terminar la sesión.</li>
+  <li><strong>Cookies persistentes:</strong> son aquellas en las que los datos siguen almacenados en el terminal y pueden ser accedidos y tratados durante un periodo definido por el responsable de la cookie, y que puede ir de unos minutos a varios años.</li>
+</ul>
+
+<h3>Cookies utilizadas en nuestra web</h3>
+<table>
+  <thead><tr><th>Denominación</th><th>Titular</th><th>Duración</th><th>Finalidad</th></tr></thead>
+  <tbody>
+    <tr><td>1P_JAR</td><td>Google Adwords</td><td>Persistente</td><td>Finalidad publicitaria</td></tr>
+    <tr><td>PHPSESSID</td><td>Cookie técnica</td><td>Sesión</td><td>Contiene el identificador de la sesión. Se elimina al cerrar el navegador.</td></tr>
+  </tbody>
+</table>
+
+<h3>¿Cómo se deshabilitan las cookies en los navegadores?</h3>
+<p>El usuario puede, en cualquier momento, permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la modificación de los parámetros de configuración del navegador instalado en su ordenador:</p>
+<ul>
+  <li><strong>Chrome:</strong> Configuración -> Mostrar opciones avanzadas -> Privacidad -> Configuración del contenido. Para más información, puede consultar el soporte de Google o la Ayuda del navegador.</li>
+  <li><strong>Explorer:</strong> Herramientas -> Opciones de Internet -> Privacidad -> Configuración. Para más información, puede consultar el soporte de Microsoft o la Ayuda del navegador.</li>
+  <li><strong>Firefox:</strong> Herramientas -> Opciones -> Privacidad -> Historial -> Configuración Personalizada. Para más información, puede consultar el soporte de Mozilla o la Ayuda del navegador.</li>
+  <li><strong>Safari:</strong> Preferencias -> Seguridad. Para más información, puede consultar el soporte de Apple o la Ayuda del navegador.</li>
+</ul>
+<p>La desactivación de las cookies no impide la navegación por el sitio web, aunque el uso de algunos de sus servicios podrá ser limitado y, por tanto, su experiencia de navegación podrá ser menos satisfactoria.</p>
+
+<h3>Retirar el consentimiento</h3>
+<p>El usuario podrá retirar en cualquier momento su consentimiento relacionado con la Política de Cookies, y podrá eliminar las cookies almacenadas en su equipo a través de los ajustes y configuraciones de su navegador de Internet, indicados anteriormente, así como accediendo a nuestro panel de configuración: <strong>CONFIGURAR COOKIES</strong>.</p>
+<p>La presente Política de Cookies se podrá modificar cuando así lo exija la legislación vigente en cada momento o cuando hubiera alguna variación en el tipo de cookies utilizadas en el sitio web. Por ello, le recomendamos revisar esta política cada vez que acceda a nuestro sitio web con el objetivo de estar adecuadamente informado sobre cómo y para qué usamos las cookies.</p>`,
+    ca:`<h2>Política de cookies</h2>
+<p>Utilitzem cookies pròpies i de tercers per millorar els nostres serveis, personalitzar el nostre lloc web, facilitar la navegació dels nostres usuaris, proporcionar-li una millor experiència en l'ús del lloc web, identificar problemes per millorar-lo, fer mesuraments i estadístiques d'ús i mostrar-li publicitat relacionada amb les seves preferències mitjançant l'anàlisi de l'ús del lloc web.</p>
+<p>L'informem que podem utilitzar cookies al seu equip a condició que l'usuari hagi donat el seu consentiment, llevat dels supòsits en què les cookies siguin necessàries per a la navegació pel nostre lloc web. En cas que presti el seu consentiment, podrem utilitzar cookies que ens permetran tenir més informació sobre les seves preferències i personalitzar el nostre lloc web de conformitat amb els seus interessos individuals.</p>
+
+<h3>Què són les cookies?</h3>
+<p>Les cookies i altres tecnologies similars com ara els local shared objects, les flash cookies o els píxels, són eines emprades pels servidors Web per emmagatzemar i recuperar informació sobre els seus visitants, així com per oferir un funcionament correcte del lloc.</p>
+
+<h3>Tipus de cookies</h3>
+<p><strong>Tipus de cookies en funció de l'entitat que les gestioni:</strong></p>
+<ul>
+  <li><strong>Cookies pròpies:</strong> són aquelles que s'envien a l'equip terminal de l'usuari des d'un equip o domini gestionat pel titular de la pàgina web i des de la qual es presta el servei sol·licitat per l'usuari.</li>
+  <li><strong>Cookies de tercers:</strong> són aquelles que s'envien a l'equip terminal de l'usuari des d'un equip o domini que no és gestionat pel titular de la pàgina web des de la qual es presta el servei sol·licitat per l'usuari, sinó per una altra entitat que tracta les dades obtingudes a través de les cookies. Així mateix, en el cas que les cookies siguin instal·lades des d'un equip o domini gestionat pel mateix titular del lloc Web però la informació que es reculli mitjançant aquestes sigui gestionada per un tercer, també seran considerades com a cookies de tercers.</li>
+</ul>
+<p><strong>Tipus de cookies segons la finalitat:</strong></p>
+<ul>
+  <li><strong>Cookies tècniques:</strong> són aquelles que permeten a l'usuari la navegació a través d'una pàgina web, plataforma o aplicació i la utilització de les diferents opcions o serveis que hi existeixin, incloent-hi aquelles que l'editor utilitza per permetre la gestió i operativa de la pàgina web i habilitar les seves funcions i serveis, com, per exemple, controlar el trànsit i la comunicació de dades, identificar la sessió, accedir a parts d'accés restringit, recordar els elements que integren una comanda, realitzar el procés de compra d'una comanda, gestionar el pagament, controlar el frau vinculat a la seguretat del servei, realitzar la sol·licitud d'inscripció o participació en un esdeveniment, comptar visites a efectes de la facturació de llicències del programari amb què funciona el servei (lloc web, plataforma o aplicació), utilitzar elements de seguretat durant la navegació, emmagatzemar continguts per a la difusió de vídeos o so, habilitar continguts dinàmics (per exemple, animació de càrrega d'un text o imatge) o compartir continguts a través de xarxes socials. També pertanyen a aquesta categoria, per la seva naturalesa tècnica, aquelles cookies que permeten la gestió, de la forma més eficaç possible, dels espais publicitaris que, com un element més de disseny o «maquetació» del servei ofert a l'usuari, l'editor hagi inclòs en una pàgina web, aplicació o plataforma en base a criteris com el contingut editat, sense que es reculli informació dels usuaris amb finalitats diferents, com pot ser personalitzar aquest contingut publicitari o altres continguts.</li>
+  <li><strong>Cookies de preferències o personalització:</strong> són aquelles que permeten recordar informació perquè l'usuari accedeixi al servei amb determinades característiques que poden diferenciar la seva experiència de la d'altres usuaris, com, per exemple, l'idioma, el nombre de resultats a mostrar quan l'usuari fa una cerca, l'aspecte o contingut del servei en funció del tipus de navegador a través del qual l'usuari accedeix al servei o de la regió des de la qual hi accedeix, etc.</li>
+  <li><strong>Cookies d'anàlisi o mesurament:</strong> són aquelles que permeten al responsable d'aquestes el seguiment i anàlisi del comportament dels usuaris dels llocs web als quals estan vinculades, inclosa la quantificació dels impactes dels anuncis. La informació recollida mitjançant aquest tipus de cookies s'utilitza en el mesurament de l'activitat dels llocs web, aplicació o plataforma, amb la finalitat d'introduir millores en funció de l'anàlisi de les dades d'ús que fan els usuaris del servei.</li>
+  <li><strong>Cookies de publicitat comportamental:</strong> són aquelles que permeten la gestió, de la forma més eficaç possible, dels espais publicitaris que hi ha a la pàgina web. Aquestes cookies emmagatzemen informació del comportament dels usuaris obtinguda a través de l'observació continuada dels seus hàbits de navegació, la qual cosa permet desenvolupar un perfil específic per mostrar publicitat en funció d'aquest.</li>
+  <li><strong>Cookies de geolocalització:</strong> s'utilitzen per saber en quin lloc es troba un usuari quan sol·licita un servei. Aquesta cookie és anònima i s'usa, per exemple, per oferir-li la informació adequada depenent del país en què es trobi.</li>
+</ul>
+<p><strong>Tipus de cookies segons el termini de temps que romanen actives:</strong></p>
+<ul>
+  <li><strong>Cookies de sessió:</strong> són aquelles dissenyades per recollir i emmagatzemar dades mentre l'usuari accedeix a una pàgina web. Se solen emprar per emmagatzemar informació que només interessa conservar per a la prestació del servei sol·licitat per l'usuari en una sola ocasió (per exemple, una llista de productes adquirits) i desapareixen en finalitzar la sessió.</li>
+  <li><strong>Cookies persistents:</strong> són aquelles en què les dades continuen emmagatzemades al terminal i poden ser accedides i tractades durant un període definit pel responsable de la cookie, i que pot anar d'uns minuts a diversos anys.</li>
+</ul>
+
+<h3>Cookies utilitzades al nostre lloc web</h3>
+<table>
+  <thead><tr><th>Denominació</th><th>Titular</th><th>Durada</th><th>Finalitat</th></tr></thead>
+  <tbody>
+    <tr><td>1P_JAR</td><td>Google Adwords</td><td>Persistent</td><td>Finalitat publicitària</td></tr>
+    <tr><td>PHPSESSID</td><td>Cookie tècnica</td><td>Sessió</td><td>Conté l'identificador de la sessió. S'elimina en tancar el navegador.</td></tr>
+  </tbody>
+</table>
+
+<h3>Com es desactiven les cookies als navegadors?</h3>
+<p>L'usuari pot, en qualsevol moment, permetre, bloquejar o eliminar les cookies instal·lades al seu equip mitjançant la modificació dels paràmetres de configuració del navegador instal·lat al seu ordinador:</p>
+<ul>
+  <li><strong>Chrome:</strong> Configuració -> Mostrar opcions avançades -> Privadesa -> Configuració del contingut. Per a més informació, pot consultar el suport de Google o l'Ajuda del navegador.</li>
+  <li><strong>Explorer:</strong> Eines -> Opcions d'Internet -> Privadesa -> Configuració. Per a més informació, pot consultar el suport de Microsoft o l'Ajuda del navegador.</li>
+  <li><strong>Firefox:</strong> Eines -> Opcions -> Privadesa -> Historial -> Configuració Personalitzada. Per a més informació, pot consultar el suport de Mozilla o l'Ajuda del navegador.</li>
+  <li><strong>Safari:</strong> Preferències -> Seguretat. Per a més informació, pot consultar el suport d'Apple o l'Ajuda del navegador.</li>
+</ul>
+<p>La desactivació de les cookies no impedeix la navegació pel lloc web, encara que l'ús d'alguns dels seus serveis podrà ser limitat i, per tant, la seva experiència de navegació podrà ser menys satisfactòria.</p>
+
+<h3>Retirar el consentiment</h3>
+<p>L'usuari podrà retirar en qualsevol moment el seu consentiment relacionat amb la Política de Cookies, i podrà eliminar les cookies emmagatzemades al seu equip a través dels ajustos i configuracions del seu navegador d'Internet, indicats anteriorment, així com accedint al nostre panell de configuració: <strong>CONFIGURAR COOKIES</strong>.</p>
+<p>Aquesta Política de Cookies es podrà modificar quan així ho exigeixi la legislació vigent en cada moment o quan hi hagi alguna variació en el tipus de cookies utilitzades al lloc web. Per això, li recomanem revisar aquesta política cada vegada que accedeixi al nostre lloc web amb l'objectiu d'estar adequadament informat sobre com i per a què utilitzem les cookies.</p>`
   }
+
 };
 
 /* Propuestas: contenido íntegro extraído de PROPUESTAS_PP.pdf (18 ejes), reordenado por prioridad
