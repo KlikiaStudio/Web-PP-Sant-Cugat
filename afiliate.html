@@ -10,198 +10,74 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <style>
-  /* ===== Afíliate — estilos propios de la página ===== */
-  .affil-hero{
-    padding:96px 24px 64px;
-    max-width:900px;
-    margin:0 auto;
-    text-align:left;
-  }
+  .affil-hero{ padding:96px 24px 64px; max-width:900px; margin:0 auto; text-align:left; }
   .affil-kicker{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:#E9EFFD;
-    color:#0E3A91;
-    font-family:'Manrope',sans-serif;
-    font-weight:700;
-    font-size:13px;
-    letter-spacing:.04em;
-    text-transform:uppercase;
-    padding:6px 14px;
-    border-radius:999px;
-    margin-bottom:18px;
+    display:inline-flex; align-items:center; gap:8px;
+    background:#E9EFFD; color:#0E3A91;
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:13px;
+    letter-spacing:.04em; text-transform:uppercase;
+    padding:6px 14px; border-radius:999px; margin-bottom:18px;
   }
-  .affil-kicker::before{
-    content:"";
-    width:7px;height:7px;
-    border-radius:50%;
-    background:#1A56DB;
-  }
+  .affil-kicker::before{ content:""; width:7px;height:7px; border-radius:50%; background:#1A56DB; }
   .affil-hero h1{
-    font-family:'Manrope',sans-serif;
-    font-weight:800;
-    font-size:clamp(28px,4vw,42px);
-    line-height:1.12;
-    color:var(--pp-navy,#0E1E3D);
-    margin:0 0 18px;
+    font-family:'Manrope',sans-serif; font-weight:800;
+    font-size:clamp(28px,4vw,42px); line-height:1.12;
+    color:var(--pp-navy,#0E1E3D); margin:0 0 18px;
   }
   .affil-hero p{
-    font-family:'Inter',sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    color:var(--muted,#5B5F66);
-    max-width:680px;
-    margin:0 0 12px;
+    font-family:'Inter',sans-serif; font-size:17px; line-height:1.6;
+    color:var(--muted,#5B5F66); max-width:680px; margin:0 0 12px;
   }
-
-  .affil-section{
-    max-width:900px;
-    margin:0 auto;
-    padding:40px 24px;
-  }
+  .affil-section{ max-width:900px; margin:0 auto; padding:40px 24px; }
   .affil-section h2{
-    font-family:'Manrope',sans-serif;
-    font-weight:800;
-    font-size:clamp(22px,2.6vw,28px);
-    color:var(--pp-navy,#0E1E3D);
-    margin:0 0 20px;
+    font-family:'Manrope',sans-serif; font-weight:800;
+    font-size:clamp(22px,2.6vw,28px); color:var(--pp-navy,#0E1E3D); margin:0 0 20px;
   }
-
-  .affil-requisitos{
-    list-style:none;
-    margin:0; padding:0;
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-  }
+  .affil-requisitos{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
   .affil-requisitos li{
-    display:flex;
-    align-items:flex-start;
-    gap:12px;
-    font-family:'Inter',sans-serif;
-    font-size:15.5px;
-    line-height:1.55;
-    color:var(--ink,#14161A);
+    display:flex; align-items:flex-start; gap:12px;
+    font-family:'Inter',sans-serif; font-size:15.5px; line-height:1.55; color:var(--ink,#14161A);
   }
-  .affil-requisitos svg{
-    flex-shrink:0;
-    margin-top:2px;
-    color:var(--pp-blue,#1E4B8F);
-  }
-
-  .affil-modalidades{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-  }
+  .affil-requisitos svg{ flex-shrink:0; margin-top:2px; color:var(--pp-blue,#1E4B8F); }
+  .affil-modalidades{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }
   @media (max-width:640px){ .affil-modalidades{grid-template-columns:1fr;} }
   .affil-mcard{
-    background:var(--surface,#FFFFFF);
-    border:1px solid var(--border,rgba(20,22,26,.08));
-    border-radius:var(--radius,16px);
-    padding:24px;
+    background:var(--surface,#FFFFFF); border:1px solid var(--border,rgba(20,22,26,.08));
+    border-radius:var(--radius,16px); padding:24px;
   }
-  .affil-mcard h3{
-    font-family:'Manrope',sans-serif;
-    font-weight:700;
-    font-size:18px;
-    color:var(--pp-navy,#0E1E3D);
-    margin:0 0 8px;
-  }
-  .affil-mcard p{
-    font-family:'Inter',sans-serif;
-    font-size:14.5px;
-    line-height:1.55;
-    color:var(--muted,#5B5F66);
-    margin:0;
-  }
+  .affil-mcard h3{ font-family:'Manrope',sans-serif; font-weight:700; font-size:18px; color:var(--pp-navy,#0E1E3D); margin:0 0 8px; }
+  .affil-mcard p{ font-family:'Inter',sans-serif; font-size:14.5px; line-height:1.55; color:var(--muted,#5B5F66); margin:0; }
   .affil-mcard .tag{
-    display:inline-block;
-    font-family:'Manrope',sans-serif;
-    font-weight:700;
-    font-size:11.5px;
-    letter-spacing:.03em;
-    text-transform:uppercase;
-    color:#0E3A91;
-    background:#E9EFFD;
-    padding:3px 10px;
-    border-radius:999px;
-    margin-bottom:10px;
+    display:inline-block; font-family:'Manrope',sans-serif; font-weight:700; font-size:11.5px;
+    letter-spacing:.03em; text-transform:uppercase; color:#0E3A91; background:#E9EFFD;
+    padding:3px 10px; border-radius:999px; margin-bottom:10px;
   }
-
-  .affil-perfiles{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-  }
+  .affil-perfiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
   @media (max-width:900px){ .affil-perfiles{grid-template-columns:1fr;} }
   .affil-pcard{
-    background:var(--surface,#FFFFFF);
-    border:1px solid var(--border,rgba(20,22,26,.08));
-    border-radius:var(--radius,16px);
-    padding:24px;
-    display:flex;
-    flex-direction:column;
+    background:var(--surface,#FFFFFF); border:1px solid var(--border,rgba(20,22,26,.08));
+    border-radius:var(--radius,16px); padding:24px; display:flex; flex-direction:column;
     box-shadow:0 1px 2px rgba(20,22,26,.04), 0 8px 24px rgba(20,22,26,.05);
   }
   .affil-picon{
-    width:44px;height:44px;
-    border-radius:12px;
-    background:var(--pp-blue,#1E4B8F);
-    color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    margin-bottom:16px;
+    width:44px;height:44px; border-radius:12px; background:var(--pp-blue,#1E4B8F); color:#fff;
+    display:flex;align-items:center;justify-content:center; margin-bottom:16px;
   }
-  .affil-pcard h3{
-    font-family:'Manrope',sans-serif;
-    font-weight:700;
-    font-size:17px;
-    color:var(--pp-navy,#0E1E3D);
-    margin:0 0 8px;
-  }
-  .affil-pcard p{
-    font-family:'Inter',sans-serif;
-    font-size:14px;
-    line-height:1.5;
-    color:var(--muted,#5B5F66);
-    margin:0 0 18px;
-    flex-grow:1;
-  }
-  .affil-downloads{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-  }
+  .affil-pcard h3{ font-family:'Manrope',sans-serif; font-weight:700; font-size:17px; color:var(--pp-navy,#0E1E3D); margin:0 0 8px; }
+  .affil-pcard p{ font-family:'Inter',sans-serif; font-size:14px; line-height:1.5; color:var(--muted,#5B5F66); margin:0 0 18px; flex-grow:1; }
+  .affil-downloads{ display:flex; flex-direction:column; gap:8px; }
   .affil-dl{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    font-family:'Manrope',sans-serif;
-    font-weight:700;
-    font-size:13.5px;
-    color:var(--pp-blue,#1E4B8F);
-    background:#F2F5FC;
-    border:1px solid rgba(30,75,143,.15);
-    border-radius:10px;
-    padding:10px 14px;
-    text-decoration:none;
-    transition:background .15s ease;
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:13.5px;
+    color:var(--pp-blue,#1E4B8F); background:#F2F5FC; border:1px solid rgba(30,75,143,.15);
+    border-radius:10px; padding:10px 14px; text-decoration:none; transition:background .15s ease;
   }
   .affil-dl:hover{ background:#E9EFFD; }
   .affil-dl svg{ flex-shrink:0; }
-
   .affil-note{
-    background:#F7F8FA;
-    border:1px dashed var(--border,rgba(20,22,26,.15));
-    border-radius:12px;
-    padding:18px 20px;
-    font-family:'Inter',sans-serif;
-    font-size:14px;
-    line-height:1.55;
-    color:var(--muted,#5B5F66);
-    margin-top:8px;
+    background:#F7F8FA; border:1px dashed var(--border,rgba(20,22,26,.15)); border-radius:12px;
+    padding:18px 20px; font-family:'Inter',sans-serif; font-size:14px; line-height:1.55;
+    color:var(--muted,#5B5F66); margin-top:8px;
   }
   .affil-note strong{ color:var(--ink,#14161A); }
 </style>
@@ -223,9 +99,7 @@
 <!-- ============ REQUISITOS ============ -->
 <section class="affil-section">
   <h2 data-i18n="affil_req_title">Requisitos para afiliarte</h2>
-  <ul class="affil-requisitos" id="affilRequisitos">
-    <!-- generado por JS a partir de I18N -->
-  </ul>
+  <ul class="affil-requisitos" data-i18n-html="affil_requisitos_html"></ul>
 </section>
 
 <!-- ============ MODALIDADES ============ -->
@@ -319,23 +193,5 @@
 <script src="data/videos.js"></script>
 <script src="data/news.js"></script>
 <script src="js/main.js"></script>
-
-<script>
-  // Requisitos: se generan desde I18N para que traduzcan con el toggle global
-  function renderAffilRequisitos(){
-    const lang = (window.currentLang || 'es');
-    const items = (window.I18N && window.I18N[lang] && window.I18N[lang].affil_requisitos_list) || [];
-    const ul = document.getElementById('affilRequisitos');
-    if(!ul) return;
-    ul.innerHTML = items.map(text => `
-      <li>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>${text}</span>
-      </li>
-    `).join('');
-  }
-  document.addEventListener('DOMContentLoaded', renderAffilRequisitos);
-  document.addEventListener('langchange', renderAffilRequisitos);
-</script>
 </body>
 </html>
