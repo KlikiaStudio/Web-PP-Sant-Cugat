@@ -91,8 +91,7 @@ const I18N = {
     affil_dl_pp_exterior: "Partido Popular",
     affil_dl_nngg_exterior: "NNGG",
     affil_note_label: "¿Cómo enviar tu ficha?",
-    affil_note_text: " — Descarga el PDF, complétalo y envíalo a [PENDIENTE: email/dirección de la sede local] o entrégalo en persona. Ficha avalada por dos afiliados cuando corresponda."
-  },
+affil_note_text: ' — Descarga el PDF, complétalo y envíalo por correo electrónico a <a href="mailto:gruppp@santcugat.cat">gruppp@santcugat.cat</a> o entrégalo en persona en la sede. Ficha avalada por dos afiliados cuando corresponda.',  },
   ca: {
     nav_inicio:"Inici", nav_conocenos:"Coneix-nos", nav_propuestas:"Propostes", nav_noticias:"Notícies",
     nav_opinion:"Opinió", nav_videos:"Vídeos", nav_afiliate:"Afilia't", nav_contacto:"Contacta", nav_cta:"Especial Eleccions 2027",
