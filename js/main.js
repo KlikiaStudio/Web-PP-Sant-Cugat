@@ -90,8 +90,8 @@ const I18N = {
     affil_dl_simpatizante_nngg: "Simpatizante (16-18)",
     affil_dl_pp_exterior: "Partido Popular",
     affil_dl_nngg_exterior: "NNGG",
-    affil_note_label: "¿Cómo enviar tu ficha?",
-affil_note_text: ' — Descarga el PDF, complétalo y envíalo por correo electrónico a <a href="mailto:gruppp@santcugat.cat">gruppp@santcugat.cat</a> o entrégalo en persona en la sede. Ficha avalada por dos afiliados cuando corresponda.',  },
+    affil_note_label: "¿Cómo enviar tu ficha?"
+  },
   ca: {
     nav_inicio:"Inici", nav_conocenos:"Coneix-nos", nav_propuestas:"Propostes", nav_noticias:"Notícies",
     nav_opinion:"Opinió", nav_videos:"Vídeos", nav_afiliate:"Afilia't", nav_contacto:"Contacta", nav_cta:"Especial Eleccions 2027",
@@ -182,8 +182,7 @@ affil_note_text: ' — Descarga el PDF, complétalo y envíalo por correo electr
     affil_dl_simpatizante_nngg: "Simpatitzant (16-18)",
     affil_dl_pp_exterior: "Partit Popular",
     affil_dl_nngg_exterior: "NNGG",
-    affil_note_label: "Com enviar la teva fitxa?",
-    affil_note_text: " — Descarrega el PDF, completa'l i envia'l a [PENDENT: correu/adreça de la seu local] o lliura'l en persona. Fitxa avalada per dos afiliats quan correspongui."
+    affil_note_label: "Com enviar la teva fitxa?"
   }
 };
 
@@ -519,6 +518,10 @@ const HTML_KEYS = {
     <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Conèixer i assumir els Estatuts del partit i els seus principis d'actuació.</span></li>
     <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Emplenar la fitxa d'afiliat i presentar-la avalada per dos afiliats.</span></li>
   `
+  },
+  affil_note_text_html: {
+    es: ' — Descarga el PDF, complétalo y envíalo por correo electrónico a <a href="mailto:gruppp@santcugat.cat">gruppp@santcugat.cat</a> o entrégalo en persona en la sede. Ficha avalada por dos afiliados cuando corresponda.',
+    ca: " — Descarrega el PDF, completa'l i envia'l per correu electrònic a <a href=\"mailto:gruppp@santcugat.cat\">gruppp@santcugat.cat</a> o lliura'l en persona a la seu. Fitxa avalada per dos afiliats quan correspongui."
   }
 };
 
