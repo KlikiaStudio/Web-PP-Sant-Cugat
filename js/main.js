@@ -64,7 +64,34 @@ const I18N = {
     footer_desc:"Trabajamos cada día por un Sant Cugat mejor, más seguro y próspero para todas las personas que viven en nuestra ciudad.",
     footer_h1:"Secciones", footer_h2:"Participa", footer_h3:"Contacto",
     footer_join:"Únete", footer_newsletter:"Newsletter",
-    footer_copy:"© 2026 PP Sant Cugat. Todos los derechos reservados.", footer_credit:"Web de campaña — Horizonte 2027"
+    footer_copy:"© 2026 PP Sant Cugat. Todos los derechos reservados.", footer_credit:"Web de campaña — Horizonte 2027",
+    affil_kicker: "Afíliate",
+    affil_title: "Únete al Partido Popular de Sant Cugat",
+    affil_lead1: "Si te apasiona la política y quieres contribuir al desarrollo de Sant Cugat, te invitamos a unirte a nosotros. Somos el partido con más afiliados de España, y tu participación es fundamental para enriquecer nuestro proyecto político con tus ideas.",
+    affil_lead2: "Afiliarte es fácil: descarga la ficha correspondiente a tu perfil, complétala y envíanosla siguiendo las instrucciones que encontrarás más abajo.",
+    affil_req_title: "Requisitos para afiliarte",
+    affil_mod_title: "Elige tu modalidad",
+    affil_mod_militante_tag: "Con cuota",
+    affil_mod_militante_title: "Militante",
+    affil_mod_militante_text: "Participas activamente en la vida del partido, con derecho a voto y obligación de cuota.",
+    affil_mod_simpatizante_tag: "Sin cuota",
+    affil_mod_simpatizante_title: "Simpatizante",
+    affil_mod_simpatizante_text: "Apoyas el proyecto y recibes nuestras comunicaciones, sin obligación de cuota.",
+    affil_docs_title: "Descarga tu ficha de afiliación",
+    affil_perfil_espana_title: "Residentes en España",
+    affil_perfil_espana_text: "Para residentes en España mayores de 18 años.",
+    affil_perfil_nngg_title: "Nuevas Generaciones",
+    affil_perfil_nngg_text: "Para jóvenes de entre 16 y 30 años. La plenitud de derechos se alcanza a los 18.",
+    affil_perfil_extranjero_title: "Residentes en el extranjero",
+    affil_perfil_extranjero_text: "Para españoles residentes fuera de España, con ficha de domicilio censal.",
+    affil_dl_militante: "Militante (+18)",
+    affil_dl_simpatizante: "Simpatizante (+18)",
+    affil_dl_militante_nngg: "Militante (18-30)",
+    affil_dl_simpatizante_nngg: "Simpatizante (16-18)",
+    affil_dl_pp_exterior: "Partido Popular",
+    affil_dl_nngg_exterior: "NNGG",
+    affil_note_label: "¿Cómo enviar tu ficha?",
+    affil_note_text: " — Descarga el PDF, complétalo y envíalo a [PENDIENTE: email/dirección de la sede local] o entrégalo en persona. Ficha avalada por dos afiliados cuando corresponda."
   },
   ca: {
     nav_inicio:"Inici", nav_conocenos:"Coneix-nos", nav_propuestas:"Propostes", nav_noticias:"Notícies",
@@ -130,7 +157,34 @@ const I18N = {
     footer_desc:"Treballem cada dia per un Sant Cugat millor, més segur i pròsper per a totes les persones que viuen a la nostra ciutat.",
     footer_h1:"Seccions", footer_h2:"Participa", footer_h3:"Contacte",
     footer_join:"Uneix-te", footer_newsletter:"Newsletter",
-    footer_copy:"© 2026 PP Sant Cugat. Tots els drets reservats.", footer_credit:"Web de campanya — Horitzó 2027"
+    footer_copy:"© 2026 PP Sant Cugat. Tots els drets reservats.", footer_credit:"Web de campanya — Horitzó 2027",
+    affil_kicker: "Afilia't",
+    affil_title: "Uneix-te al Partit Popular de Sant Cugat",
+    affil_lead1: "Si t'apassiona la política i vols contribuir al desenvolupament de Sant Cugat, t'convidem a unir-te a nosaltres. Som el partit amb més afiliats d'Espanya, i la teva participació és fonamental per enriquir el nostre projecte polític amb les teves idees.",
+    affil_lead2: "Afiliar-se és fàcil: descarrega la fitxa corresponent al teu perfil, completa-la i envia-la seguint les instruccions que trobaràs més avall.",
+    affil_req_title: "Requisits per afiliar-te",
+    affil_mod_title: "Tria la teva modalitat",
+    affil_mod_militante_tag: "Amb quota",
+    affil_mod_militante_title: "Militant",
+    affil_mod_militante_text: "Participes activament en la vida del partit, amb dret a vot i obligació de quota.",
+    affil_mod_simpatizante_tag: "Sense quota",
+    affil_mod_simpatizante_title: "Simpatitzant",
+    affil_mod_simpatizante_text: "Recolzes el projecte i reps les nostres comunicacions, sense obligació de quota.",
+    affil_docs_title: "Descarrega la teva fitxa d'afiliació",
+    affil_perfil_espana_title: "Residents a Espanya",
+    affil_perfil_espana_text: "Per a residents a Espanya majors de 18 anys.",
+    affil_perfil_nngg_title: "Noves Generacions",
+    affil_perfil_nngg_text: "Per a joves d'entre 16 i 30 anys. La plenitud de drets s'assoleix als 18.",
+    affil_perfil_extranjero_title: "Residents a l'estranger",
+    affil_perfil_extranjero_text: "Per a espanyols residents fora d'Espanya, amb fitxa de domicili censal.",
+    affil_dl_militante: "Militant (+18)",
+    affil_dl_simpatizante: "Simpatitzant (+18)",
+    affil_dl_militante_nngg: "Militant (18-30)",
+    affil_dl_simpatizante_nngg: "Simpatitzant (16-18)",
+    affil_dl_pp_exterior: "Partit Popular",
+    affil_dl_nngg_exterior: "NNGG",
+    affil_note_label: "Com enviar la teva fitxa?",
+    affil_note_text: " — Descarrega el PDF, completa'l i envia'l a [PENDENT: correu/adreça de la seu local] o lliura'l en persona. Fitxa avalada per dos afiliats quan correspongui."
   }
 };
 
@@ -450,8 +504,23 @@ const HTML_KEYS = {
 <h3>Retirar el consentiment</h3>
 <p>L'usuari podrà retirar en qualsevol moment el seu consentiment relacionat amb la Política de Cookies, i podrà eliminar les cookies emmagatzemades al seu equip a través dels ajustos i configuracions del seu navegador d'Internet, indicats anteriorment, així com accedint al nostre panell de configuració: <strong>CONFIGURAR COOKIES</strong>.</p>
 <p>Aquesta Política de Cookies es podrà modificar quan així ho exigeixi la legislació vigent en cada moment o quan hi hagi alguna variació en el tipus de cookies utilitzades al lloc web. Per això, li recomanem revisar aquesta política cada vegada que accedeixi al nostre lloc web amb l'objectiu d'estar adequadament informat sobre com i per a què utilitzem les cookies.</p>`
+  },
+  affil_requisitos_html: {
+    es: `
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Ser mayor de edad.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Ser español y no militar en ningún otro partido, salvo residentes en el extranjero, que podrán afiliarse a partidos afines al Partido Popular.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Ser ciudadano de un país de la Unión Europea, pudiendo compatibilizar la militancia con partidos afines de su ámbito nacional.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Conocer y asumir los Estatutos del partido y sus principios de actuación.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Cumplimentar la ficha de afiliado y presentarla avalada por dos afiliados.</span></li>
+  `,
+    ca: `
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Ser major d'edat.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Ser espanyol i no militar en cap altre partit, excepte residents a l'estranger, que podran afiliar-se a partits afins al Partit Popular.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Ser ciutadà d'un país de la Unió Europea, podent compatibilitzar la militància amb partits afins del seu àmbit nacional.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Conèixer i assumir els Estatuts del partit i els seus principis d'actuació.</span></li>
+    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Emplenar la fitxa d'afiliat i presentar-la avalada per dos afiliats.</span></li>
+  `
   }
-
 };
 
 /* Propuestas: contenido íntegro extraído de PROPUESTAS_PP.pdf (18 ejes), reordenado por prioridad
