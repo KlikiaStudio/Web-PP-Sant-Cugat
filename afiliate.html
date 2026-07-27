@@ -9,6 +9,202 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+  /* ===== Afíliate — estilos propios de la página ===== */
+  .affil-hero{
+    padding:96px 24px 64px;
+    max-width:900px;
+    margin:0 auto;
+    text-align:left;
+  }
+  .affil-kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:#E9EFFD;
+    color:#0E3A91;
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+  .affil-kicker::before{
+    content:"";
+    width:7px;height:7px;
+    border-radius:50%;
+    background:#1A56DB;
+  }
+  .affil-hero h1{
+    font-family:'Manrope',sans-serif;
+    font-weight:800;
+    font-size:clamp(28px,4vw,42px);
+    line-height:1.12;
+    color:var(--pp-navy,#0E1E3D);
+    margin:0 0 18px;
+  }
+  .affil-hero p{
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    color:var(--muted,#5B5F66);
+    max-width:680px;
+    margin:0 0 12px;
+  }
+
+  .affil-section{
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 24px;
+  }
+  .affil-section h2{
+    font-family:'Manrope',sans-serif;
+    font-weight:800;
+    font-size:clamp(22px,2.6vw,28px);
+    color:var(--pp-navy,#0E1E3D);
+    margin:0 0 20px;
+  }
+
+  .affil-requisitos{
+    list-style:none;
+    margin:0; padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .affil-requisitos li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    font-family:'Inter',sans-serif;
+    font-size:15.5px;
+    line-height:1.55;
+    color:var(--ink,#14161A);
+  }
+  .affil-requisitos svg{
+    flex-shrink:0;
+    margin-top:2px;
+    color:var(--pp-blue,#1E4B8F);
+  }
+
+  .affil-modalidades{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  @media (max-width:640px){ .affil-modalidades{grid-template-columns:1fr;} }
+  .affil-mcard{
+    background:var(--surface,#FFFFFF);
+    border:1px solid var(--border,rgba(20,22,26,.08));
+    border-radius:var(--radius,16px);
+    padding:24px;
+  }
+  .affil-mcard h3{
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:18px;
+    color:var(--pp-navy,#0E1E3D);
+    margin:0 0 8px;
+  }
+  .affil-mcard p{
+    font-family:'Inter',sans-serif;
+    font-size:14.5px;
+    line-height:1.55;
+    color:var(--muted,#5B5F66);
+    margin:0;
+  }
+  .affil-mcard .tag{
+    display:inline-block;
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:11.5px;
+    letter-spacing:.03em;
+    text-transform:uppercase;
+    color:#0E3A91;
+    background:#E9EFFD;
+    padding:3px 10px;
+    border-radius:999px;
+    margin-bottom:10px;
+  }
+
+  .affil-perfiles{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:900px){ .affil-perfiles{grid-template-columns:1fr;} }
+  .affil-pcard{
+    background:var(--surface,#FFFFFF);
+    border:1px solid var(--border,rgba(20,22,26,.08));
+    border-radius:var(--radius,16px);
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 1px 2px rgba(20,22,26,.04), 0 8px 24px rgba(20,22,26,.05);
+  }
+  .affil-picon{
+    width:44px;height:44px;
+    border-radius:12px;
+    background:var(--pp-blue,#1E4B8F);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:16px;
+  }
+  .affil-pcard h3{
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:17px;
+    color:var(--pp-navy,#0E1E3D);
+    margin:0 0 8px;
+  }
+  .affil-pcard p{
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    line-height:1.5;
+    color:var(--muted,#5B5F66);
+    margin:0 0 18px;
+    flex-grow:1;
+  }
+  .affil-downloads{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .affil-dl{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    font-family:'Manrope',sans-serif;
+    font-weight:700;
+    font-size:13.5px;
+    color:var(--pp-blue,#1E4B8F);
+    background:#F2F5FC;
+    border:1px solid rgba(30,75,143,.15);
+    border-radius:10px;
+    padding:10px 14px;
+    text-decoration:none;
+    transition:background .15s ease;
+  }
+  .affil-dl:hover{ background:#E9EFFD; }
+  .affil-dl svg{ flex-shrink:0; }
+
+  .affil-note{
+    background:#F7F8FA;
+    border:1px dashed var(--border,rgba(20,22,26,.15));
+    border-radius:12px;
+    padding:18px 20px;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    line-height:1.55;
+    color:var(--muted,#5B5F66);
+    margin-top:8px;
+  }
+  .affil-note strong{ color:var(--ink,#14161A); }
+</style>
 </head>
 <body>
 
@@ -16,47 +212,103 @@
 <script src="js/layout.js"></script>
 <script>Layout.header('afiliate');</script>
 
-<!-- ============ JOIN / NEWSLETTER ============ -->
-<section class="join">
-  <div class="wrap">
-    <div class="join-box" data-reveal>
-      <div class="join-grid">
-        <div>
-          <span class="eyebrow" data-i18n="join_eyebrow">Súmate al proyecto</span>
-          <h2 data-i18n-html="join_title">Sant Cugat lo cambiamos <span class="accent" style="color:var(--pp-blue);">entre todos</span>.</h2>
-          <p class="lead" data-i18n="join_lead">Recibe nuestras propuestas y participa en el proyecto de ciudad para 2027. Sin spam. Solo lo importante.</p>
-          <div class="social-circles">
-            <a class="scircle" href="#" aria-label="Facebook" data-net="facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a class="scircle" href="#" aria-label="Instagram" data-net="instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.014 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg></a>
-            <a class="scircle" href="#" aria-label="YouTube" data-net="youtube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-            <a class="scircle" href="#" aria-label="X" data-net="x"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a class="scircle" href="#" aria-label="TikTok" data-net="tiktok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
-          </div>
-        </div>
-        <form id="joinForm" onsubmit="return handleJoinSubmit(event)">
-          <div class="field">
-            <label data-i18n="form_name">Nombre</label>
-            <input type="text" name="nombre" data-i18n-placeholder="form_name_ph" placeholder="Tu nombre" required>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label data-i18n="form_email">Email</label>
-              <input type="email" name="email" placeholder="tu@email.com" required>
-            </div>
-            <div class="field">
-              <label data-i18n="form_cp">Código postal</label>
-              <input type="text" name="cp" placeholder="08172" pattern="[0-9]{5}">
-            </div>
-          </div>
-          <label class="checkbox-row">
-            <input type="checkbox" required>
-            <span data-i18n="form_rgpd">Acepto la política de privacidad y el tratamiento de mis datos para recibir comunicaciones del PP Sant Cugat (RGPD).</span>
-          </label>
-          <button type="submit" class="btn btn-primary submit-btn" data-i18n="form_submit">ÚNETE AL PROYECTO</button>
-          <p class="form-note" data-i18n="form_note">[Formulario pendiente de conectar — ver checklist de activación]</p>
-        </form>
+<!-- ============ HERO ============ -->
+<section class="affil-hero" data-reveal>
+  <span class="affil-kicker" data-i18n="affil_kicker">Afíliate</span>
+  <h1 data-i18n="affil_title">Únete al Partido Popular de Sant Cugat</h1>
+  <p data-i18n="affil_lead1">Si te apasiona la política y quieres contribuir al desarrollo de Sant Cugat, te invitamos a unirte a nosotros. Somos el partido con más afiliados de España, y tu participación es fundamental para enriquecer nuestro proyecto político con tus ideas.</p>
+  <p data-i18n="affil_lead2">Afiliarte es fácil: descarga la ficha correspondiente a tu perfil, complétala y envíanosla siguiendo las instrucciones que encontrarás más abajo.</p>
+</section>
+
+<!-- ============ REQUISITOS ============ -->
+<section class="affil-section">
+  <h2 data-i18n="affil_req_title">Requisitos para afiliarte</h2>
+  <ul class="affil-requisitos" id="affilRequisitos">
+    <!-- generado por JS a partir de I18N -->
+  </ul>
+</section>
+
+<!-- ============ MODALIDADES ============ -->
+<section class="affil-section">
+  <h2 data-i18n="affil_mod_title">Elige tu modalidad</h2>
+  <div class="affil-modalidades">
+    <div class="affil-mcard">
+      <span class="tag" data-i18n="affil_mod_militante_tag">Con cuota</span>
+      <h3 data-i18n="affil_mod_militante_title">Militante</h3>
+      <p data-i18n="affil_mod_militante_text">Participas activamente en la vida del partido, con derecho a voto y obligación de cuota.</p>
+    </div>
+    <div class="affil-mcard">
+      <span class="tag" data-i18n="affil_mod_simpatizante_tag">Sin cuota</span>
+      <h3 data-i18n="affil_mod_simpatizante_title">Simpatizante</h3>
+      <p data-i18n="affil_mod_simpatizante_text">Apoyas el proyecto y recibes nuestras comunicaciones, sin obligación de cuota.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESCARGA DE FICHAS ============ -->
+<section class="affil-section">
+  <h2 data-i18n="affil_docs_title">Descarga tu ficha de afiliación</h2>
+  <div class="affil-perfiles">
+
+    <div class="affil-pcard">
+      <div class="affil-picon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h1"/><path d="M9 13h1"/><path d="M14 9h1"/><path d="M14 13h1"/></svg>
+      </div>
+      <h3 data-i18n="affil_perfil_espana_title">Residentes en España</h3>
+      <p data-i18n="affil_perfil_espana_text">Para residentes en España mayores de 18 años.</p>
+      <div class="affil-downloads">
+        <a class="affil-dl" href="docs/afiliacion/AfiliacionPP%20(1).pdf" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="affil_dl_militante">Militante (+18)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a>
+        <a class="affil-dl" href="docs/afiliacion/SimpatizantePP.pdf" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="affil_dl_simpatizante">Simpatizante (+18)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a>
       </div>
     </div>
+
+    <div class="affil-pcard">
+      <div class="affil-picon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <h3 data-i18n="affil_perfil_nngg_title">Nuevas Generaciones</h3>
+      <p data-i18n="affil_perfil_nngg_text">Para jóvenes de entre 16 y 30 años. La plenitud de derechos se alcanza a los 18.</p>
+      <div class="affil-downloads">
+        <a class="affil-dl" href="docs/afiliacion/AfiliacionNNGG.pdf" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="affil_dl_militante_nngg">Militante (18-30)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a>
+        <a class="affil-dl" href="docs/afiliacion/SimpatizanteNNGG.pdf" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="affil_dl_simpatizante_nngg">Simpatizante (16-18)</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="affil-pcard">
+      <div class="affil-picon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg>
+      </div>
+      <h3 data-i18n="affil_perfil_extranjero_title">Residentes en el extranjero</h3>
+      <p data-i18n="affil_perfil_extranjero_text">Para españoles residentes fuera de España, con ficha de domicilio censal.</p>
+      <div class="affil-downloads">
+        <a class="affil-dl" href="docs/afiliacion/AfiliacionPPExterior.pdf" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="affil_dl_pp_exterior">Partido Popular</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a>
+        <a class="affil-dl" href="docs/afiliacion/AfiliadosNNGG-Exterior.pdf" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="affil_dl_nngg_exterior">NNGG</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="affil-note">
+    <strong data-i18n="affil_note_label">¿Cómo enviar tu ficha?</strong>
+    <span data-i18n="affil_note_text"> — Descarga el PDF, complétalo y envíalo a [PENDIENTE: email/dirección de la sede local] o entrégalo en persona. Ficha avalada por dos afiliados cuando corresponda.</span>
   </div>
 </section>
 
@@ -67,5 +319,23 @@
 <script src="data/videos.js"></script>
 <script src="data/news.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+  // Requisitos: se generan desde I18N para que traduzcan con el toggle global
+  function renderAffilRequisitos(){
+    const lang = (window.currentLang || 'es');
+    const items = (window.I18N && window.I18N[lang] && window.I18N[lang].affil_requisitos_list) || [];
+    const ul = document.getElementById('affilRequisitos');
+    if(!ul) return;
+    ul.innerHTML = items.map(text => `
+      <li>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>${text}</span>
+      </li>
+    `).join('');
+  }
+  document.addEventListener('DOMContentLoaded', renderAffilRequisitos);
+  document.addEventListener('langchange', renderAffilRequisitos);
+</script>
 </body>
 </html>
