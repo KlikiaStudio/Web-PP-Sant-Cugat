@@ -37,7 +37,8 @@ const I18N = {
     about_bio:"Abogado y santcugatense de convicción, Álvaro preside el Partido Popular de Sant Cugat desde 2015. Como concejal y portavoz en el Ayuntamiento, lleva más de una década defendiendo con firmeza los intereses de los vecinos y trabajando por un Sant Cugat más seguro, próspero y bien gestionado.",
     about_stat1:"Años en Sant Cugat", about_stat2:"Vecinos escuchados", about_stat3:"Propuestas presentadas",
     team_title:"Nuestro equipo",
-    team_note:"Muy pronto publicaremos una página individual con la trayectoria completa de cada candidato/a.",
+    team_note:"Conoce la trayectoria completa de cada candidato/a en su página individual.",
+    candidate_more:"Leer más →", candidate_back:"← Volver a Conócenos",
     noticias_eyebrow:"Actualidad",
     noticias_page_title:"Toda la actualidad municipal del PP Sant Cugat.",
     noticias_page_lead:"Sigue de cerca la actividad de nuestro grupo municipal: mociones, declaraciones y toda la actualidad política en Sant Cugat.",
@@ -129,7 +130,8 @@ const I18N = {
     about_bio:"Advocat i santcugatenc de convicció, l'Àlvaro presideix el Partit Popular de Sant Cugat des de 2015. Com a regidor i portaveu a l'Ajuntament, porta més d'una dècada defensant amb fermesa els interessos dels veïns i treballant per un Sant Cugat més segur, pròsper i ben gestionat.",
     about_stat1:"Anys a Sant Cugat", about_stat2:"Veïns escoltats", about_stat3:"Propostes presentades",
     team_title:"El nostre equip",
-    team_note:"Molt aviat publicarem una pàgina individual amb la trajectòria completa de cada candidat/a.",
+    team_note:"Coneix la trajectòria completa de cada candidat/a a la seva pàgina individual.",
+    candidate_more:"Llegir més →", candidate_back:"← Tornar a Coneix-nos",
     noticias_eyebrow:"Actualitat",
     noticias_page_title:"Tota l'actualitat municipal del PP Sant Cugat.",
     noticias_page_lead:"Segueix de prop l'activitat del nostre grup municipal: mocions, declaracions i tota l'actualitat política a Sant Cugat.",
@@ -1076,13 +1078,13 @@ const PROPOSALS = [
    no se repite en este grid. Aquí van los otros 3 cargos públicos, con foto real. Solo
    nombre + cargo por decisión del equipo — la biografía completa irá en su página individual. */
 const TEAM = [
-  { name:"Alfredo Bergua Valls", photo:"img/equipo/alfredo-bergua.png",
+  { name:"Alfredo Bergua Valls", photo:"img/equipo/alfredo-bergua.png", link:"candidato-alfredo-bergua.html",
     es:{ role:"Secretario General del PP Sant Cugat · Concejal en el Ayuntamiento", bio:"" },
     ca:{ role:"Secretari General del PP Sant Cugat · Regidor a l'Ajuntament", bio:"" } },
-  { name:"Estrella Salanova Casajuana", photo:"img/equipo/estrella-salanova.png",
+  { name:"Estrella Salanova Casajuana", photo:"img/equipo/estrella-salanova.png", link:"candidato-estrella-salanova.html",
     es:{ role:"Responsable de Relaciones Institucionales · Concejal en el Ayuntamiento", bio:"" },
     ca:{ role:"Responsable de Relacions Institucionals · Regidora a l'Ajuntament", bio:"" } },
-  { name:"Carlos Aranguren Vázquez", photo:"img/equipo/carlos-aranguren.png",
+  { name:"Carlos Aranguren Vázquez", photo:"img/equipo/carlos-aranguren.png", link:"candidato-carlos-aranguren.html",
     es:{ role:"Responsable de Estudios y Programas · Vocal en la EMD de Valldoreix", bio:"" },
     ca:{ role:"Responsable d'Estudis i Programes · Vocal a l'EMD de Valldoreix", bio:"" } }
 ];
@@ -1185,12 +1187,14 @@ function renderTeam(lang){
   grid.innerHTML = TEAM.map(m=>{
     const photoStyle = m.photo ? ` style="background-image:url('${m.photo}');background-size:cover;background-position:top center;"` : '';
     const bio = m[lang].bio;
+    const more = m.link ? `<a class="card-link" href="${m.link}">${I18N[lang].candidate_more}</a>` : '';
     return `
     <div class="team-card">
       <div class="team-photo"${photoStyle}></div>
       <h3>${m.name}</h3>
       <div class="team-role">${m[lang].role}</div>
       ${bio ? `<p>${bio}</p>` : ''}
+      ${more}
     </div>
   `;
   }).join('');
@@ -1415,8 +1419,22 @@ function formatDate(iso, lang){
   return d.toLocaleDateString(lang==='ca'?'ca-ES':'es-ES', {day:'2-digit', month:'short', year:'numeric'});
 }
 
-/* ==================== SOCIAL LINKS (placeholder hasta URLs reales) ==================== */
-// Cuando tengas las URLs reales, sustituye los "#" de data-net por el enlace correspondiente.
+/* ==================== SOCIAL LINKS ==================== */
+const SOCIAL_LINKS = {
+  facebook: "https://www.facebook.com/ppsantcugat/",
+  x: "https://x.com/PPSantCugat/",
+  youtube: "https://www.youtube.com/channel/UCqCfyPnpGPbvxmdAPRrue3g",
+  instagram: "https://www.instagram.com/ppsantcugat/",
+  whatsapp: "https://wa.me/+34686270802?text=Hi",
+  tiktok: "https://www.tiktok.com/@ppsantcugat"
+};
+document.querySelectorAll('[data-net]').forEach(el=>{
+  const url = SOCIAL_LINKS[el.getAttribute('data-net')];
+  if(!url) return;
+  el.setAttribute('href', url);
+  el.setAttribute('target', '_blank');
+  el.setAttribute('rel', 'noopener');
+});
 
 /* ==================== REVEAL ON SCROLL ==================== */
 const revealObserver = new IntersectionObserver((entries)=>{
